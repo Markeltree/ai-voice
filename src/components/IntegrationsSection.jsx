@@ -28,14 +28,26 @@ export default function IntegrationsSection() {
   const Card = ({ item, isActive, onClick }) => (
     <div
       onClick={onClick}
-      className={`integration-card ${isActive ? 'integration-card-active' : 'integration-card-inactive'}`}
+      className={`integration-card cursor-pointer ${isActive ? 'integration-card-active' : 'integration-card-inactive'}`}
     >
       <div className={`integration-icon-wrap ${isActive ? 'integration-icon-active' : 'integration-icon-inactive'}`}>
-        <div className="w-12 h-12 md:w-14 md:h-14 rounded-2xl bg-gray-50 flex items-center justify-center shadow-inner border border-gray-100">
+        {/* Div size remains same as original, overflow-visible added so 70x71 icon doesn't clip */}
+        <div className="w-12 h-12 md:w-14 md:h-14 rounded-2xl bg-gray-50 flex items-center justify-center shadow-inner border border-gray-100 overflow-visible relative">
           {item.icon === 'Eleven' ? (
-            <span className="text-[9px] md:text-[10px]   text-[#1A1A2E]">ElevenLabs</span>
+            <span className="text-[9px] md:text-[10px] text-[#1A1A2E] font-bold">ElevenLabs</span>
           ) : (
-            <img src={item.icon} alt={item.name} className="w-7 h-7 md:w-8 md:h-8 object-contain" />
+            <img 
+              src={item.icon} 
+              alt={item.name} 
+              // Icon size exactly 70x71 as requested
+              style={{ 
+                width: '70px', 
+                height: '71px', 
+                minWidth: '70px',
+                maxWidth: 'none'
+              }} 
+              className="object-contain" 
+            />
           )}
         </div>
       </div>
@@ -47,7 +59,7 @@ export default function IntegrationsSection() {
           </p>
         )}
         <div className="flex items-center justify-center gap-1.5">
-          <span className="text-xs md:text-sm   text-[#1A1A2E]">{item.name}</span>
+          <span className="text-xs md:text-sm text-[#1A1A2E] font-medium">{item.name}</span>
           {!isActive && (
             <div className="w-3.5 h-3.5 rounded-full border border-gray-200 flex items-center justify-center text-[7px] text-gray-400">→</div>
           )}
@@ -63,7 +75,7 @@ export default function IntegrationsSection() {
   )
 
   return (
-    <section className="bg-white overflow-hidden">
+    <section className="bg-white overflow-hidden py-12">
       <div className="section-wrap">
 
         <div className="text-center mb-12 md:mb-16">

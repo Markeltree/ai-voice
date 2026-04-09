@@ -58,118 +58,126 @@ export default function VoiceAgentsSection() {
   }
 
   return (
-    <section className="bg-white">
-      <div className="section-wrap">
+    <section className="bg-white py-16">
+  <div className="section-wrap max-w-[1400px] mx-auto px-6">
 
-        {/* Header */}
-        <div className="relative mb-10 text-center">
-          <div className="absolute left-[10%] top-0 -rotate-12 hidden md:block">
-            <span className="bg-[#FFD641] text-xs px-4 py-2 rounded-full shadow-sm">
-              in 40+ languages
-            </span>
-          </div>
-          <h2 className="agent-heading">
-            Deploy AI voice agents that sound human and work 24/7
-          </h2>
-          <p className="text-gray-500 max-w-2xl mx-auto text-[25px] mt-4">
-            Deliver spectacular customer experience with round-the-clock
-            human-like interactions, 400+ AI voices and in 40 global languages.
-          </p>
-        </div>
-
-        <div className="flex items-center justify-start gap-2 mb-8 text-gray-400 font-semibold text-[25px]">
-          <span className="text-lg">🎧</span> 400+ Neural Voices For Lifelike Voice Agents
-        </div>
-
-        {/* Agents — desktop: horizontal expand, mobile: vertical stack */}
-        <div className="agent-cards-wrap mb-12">
-          {agents.map((agent) => (
-            <div
-              key={agent.id}
-              onClick={() => handleAgentClick(agent)}
-              className="agent-card-item"
-              style={{
-                background: activeAgent.id === agent.id ? agent.bgColor : 'transparent',
-              }}
-              data-active={activeAgent.id === agent.id ? 'true' : 'false'}
-            >
-              {/* Image side */}
-              <div className={`agent-card-img-wrap ${activeAgent.id === agent.id ? 'agent-card-img-active' : 'agent-card-img-inactive'}`}>
-                <img src={agent.img} className="w-full h-full object-cover" alt={agent.name} />
-                <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-white px-5 py-1.5 rounded-xl shadow-md text-sm   text-gray-800 whitespace-nowrap">
-                  {agent.name}
-                </div>
-              </div>
-
-              {/* Content side — only when active */}
-              {activeAgent.id === agent.id && (
-                <div className="agent-card-content">
-                  <span className="bg-black/10 w-fit px-4 py-1 rounded-lg text-[25px]  text-[#1A1A2E] mb-4 block">{agent.type}</span>
-                  <h3 className="text-[40px] font-black text-[#1A1A2E] mb-3">{agent.title}</h3>
-                  <p className="text-[18px] leading-relaxed text-[#1A1A2E]/70 mb-6">{agent.desc}</p>
-                  <div className="flex items-center gap-3">
-                    <button
-                      onClick={(e) => { e.stopPropagation(); togglePlay() }}
-                      className="w-12 h-12 rounded-full bg-white flex items-center justify-center shadow-lg hover:scale-105 transition-transform flex-shrink-0"
-                    >
-                      {isPlaying ? (
-                        <div className="flex gap-1">
-                          <div className="w-1 h-4 bg-gray-800"></div>
-                          <div className="w-1 h-4 bg-gray-800"></div>
-                        </div>
-                      ) : (
-                        <div className="ml-1 w-0 h-0 border-t-[8px] border-t-transparent border-l-[12px] border-l-gray-800 border-b-[8px] border-b-transparent"></div>
-                      )}
-                    </button>
-                    <div className="flex-1 h-1.5 bg-black/5 rounded-full overflow-hidden">
-                      <div className={`h-full bg-black/20 ${isPlaying ? "w-full transition-all duration-[30s] linear" : "w-0"}`}></div>
-                    </div>
-                  </div>
-                </div>
-              )}
-            </div>
-          ))}
-        </div>
-
-        <audio ref={audioRef} src={activeAgent.audio} onEnded={() => setIsPlaying(false)} />
-
-        {/* Bottom 2 cards */}
-       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-  <div className="bg-[#EDF2FF] rounded-[40px] p-6 md:p-10 flex flex-col md:flex-row items-start text-left relative overflow-hidden min-h-[445px]">
-    
-    {/* TEXT */}
-    <div className="z-10 max-w-full md:max-w-[50%]">
-      <h4 className="text-[36px] md:text-[60px] font-black text-[#1A1A2E] leading-tight mb-4">
-        400+ Neural <br /> AI Voices
-      </h4>
-      <p className="text-gray-500 text-[18px] md:text-[25px]">
-        Deliver high-quality conversations with 400 human-like neural voices and 140 accents and variants.
+    {/* Header */}
+    <div className="relative mb-14 text-center">
+      <div className="absolute left-[10%] top-0 -rotate-12 hidden md:block">
+        <span className="bg-[#FFD641] text-[13px] px-5 py-2 rounded-full shadow-sm font-bold">
+          in 40+ languages
+        </span>
+      </div>
+      <h2 className="agent-heading text-[36px] md:text-[54px] font-black text-[#1A1A2E] leading-tight">
+        Deploy AI voice agents that sound human and work 24/7
+      </h2>
+      <p className="text-gray-500 max-w-2xl mx-auto text-[20px] md:text-[25px] mt-6">
+        Deliver spectacular customer experience with round-the-clock
+        human-like interactions, 400+ AI voices and in 40 global languages.
       </p>
     </div>
 
-    {/* IMAGE */}
-    <img
-      src={aivoice}
-      className="w-full mt-6 md:mt-0 md:w-[50%] md:absolute md:right-0 md:top-0 md:h-full object-contain"
-      alt=""
-    />
-  </div>
+    <div className="flex items-center justify-start gap-3 mb-10 text-gray-400 font-bold text-[22px]">
+      <span className="text-2xl">🎧</span> 400+ Neural Voices For Lifelike Voice Agents
+    </div>
 
-  {/* <div className="bg-[#1D1D2B] rounded-[40px] p-8 md:p-10 flex flex-col items-start text-left text-white  min-h-[445px] max-w-[440px]">
-    <span className="border border-white/20 px-4 py-1.5 rounded-full text-[11px]   mb-6">
-      1 click elevenlabs integration
-    </span>
-    <h4 className="text-[28px] md:text-[34px] font-black leading-tight mb-4">Elevenlabs</h4>
-    <p className="text-gray-400 text-sm max-w-[300px] mb-8">
-      Create voices & accents or clone your own voice with our ElevenLabs 1 click Integration.
-    </p>
-    <button className="bg-[#5048E5] text-white px-8 py-3 rounded-2xl flex items-center gap-2 hover:bg-[#4338CA] transition-colors">
-      <span>🎙️</span> <a href="/#call">Try a conversation</a>
-    </button>
-  </div> */}
-</div>
+    {/* Agents — desktop: horizontal expand, mobile: vertical stack */}
+    <div className="agent-cards-wrap mb-16">
+      {agents.map((agent) => (
+        <div
+          key={agent.id}
+          onClick={() => handleAgentClick(agent)}
+          className="agent-card-item cursor-pointer"
+          style={{
+            background: activeAgent.id === agent.id ? agent.bgColor : 'transparent',
+          }}
+          data-active={activeAgent.id === agent.id ? 'true' : 'false'}
+        >
+          {/* Image side */}
+          <div className={`agent-card-img-wrap ${activeAgent.id === agent.id ? 'agent-card-img-active' : 'agent-card-img-inactive'}`}>
+            <img src={agent.img} className="w-full h-full object-cover" alt={agent.name} />
+            <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-white px-5 py-1.5 rounded-xl shadow-md text-sm text-gray-800 whitespace-nowrap font-medium">
+              {agent.name}
+            </div>
+          </div>
 
+          {/* Content side — only when active */}
+          {activeAgent.id === agent.id && (
+            <div className="agent-card-content">
+              <span className="bg-black/10 w-fit px-4 py-1 rounded-lg text-[22px] text-[#1A1A2E] mb-4 block font-semibold">{agent.type}</span>
+              <h3 className="text-[36px] md:text-[42px] font-black text-[#1A1A2E] mb-3 leading-tight">{agent.title}</h3>
+              <p className="text-[17px] leading-relaxed text-[#1A1A2E]/70 mb-8">{agent.desc}</p>
+              <div className="flex items-center gap-3">
+                <button
+                  onClick={(e) => { e.stopPropagation(); togglePlay() }}
+                  className="w-12 h-12 rounded-full bg-white flex items-center justify-center shadow-lg hover:scale-105 transition-transform flex-shrink-0"
+                >
+                  {isPlaying ? (
+                    <div className="flex gap-1.5">
+                      <div className="w-1 h-4 bg-gray-800"></div>
+                      <div className="w-1 h-4 bg-gray-800"></div>
+                    </div>
+                  ) : (
+                    <div className="ml-1 w-0 h-0 border-t-[8px] border-t-transparent border-l-[12px] border-l-gray-800 border-b-[8px] border-b-transparent"></div>
+                  )}
+                </button>
+                <div className="flex-1 h-1.5 bg-black/5 rounded-full overflow-hidden">
+                  <div className={`h-full bg-black/20 ${isPlaying ? "w-full transition-all duration-[30s] linear" : "w-0"}`}></div>
+                </div>
+              </div>
+            </div>
+          )}
+        </div>
+      ))}
+    </div>
+
+    <audio ref={audioRef} src={activeAgent.audio} onEnded={() => setIsPlaying(false)} />
+
+    {/* Bottom 2 cards Section - MATCHING SS1 */}
+    <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+      
+      {/* 400+ Neural AI Voices Card */}
+      <div className="lg:col-span-2 bg-[#EDF2FF] rounded-[48px] p-10 md:p-14 flex flex-col md:flex-row items-center relative overflow-hidden min-h-[460px]">
+        <div className="z-10 w-full md:w-[55%]">
+          <h4 className="text-[44px] md:text-[62px] font-black text-[#1A1A2E] leading-[1.1] mb-6 tracking-tight">
+            400+ Neural <br /> AI Voices
+          </h4>
+          <p className="text-[#1A1A2E]/60 text-[20px] md:text-[24px] leading-snug max-w-[440px]">
+            Deliver high-quality conversations with 400 human-like neural voices and 140 accents and variants.
+          </p>
+        </div>
+
+        <div className="w-full md:w-[45%] flex justify-center md:justify-end mt-10 md:mt-0">
+          <img
+            src={aivoice}
+            className="w-full max-w-[400px] object-contain md:scale-125 md:translate-x-4"
+            alt="AI Interface"
+          />
+        </div>
       </div>
-    </section>
+
+      {/* Elevenlabs Card */}
+      <div className="lg:col-span-1 bg-[#1A1A26] rounded-[48px] p-10 flex flex-col items-start justify-between text-left text-white min-h-[460px]">
+        <div>
+          <span className="border border-white/20 px-5 py-2 rounded-full text-[12px] font-medium inline-block mb-10 tracking-widest uppercase">
+            1 click elevenlabs integration
+          </span>
+          <h4 className="text-[40px] md:text-[46px] font-black leading-tight mb-5">
+            Elevenlabs
+          </h4>
+          <p className="text-gray-400 text-[18px] md:text-[20px] leading-relaxed mb-8">
+            Create voices & accents or clone your own voice with our ElevenLabs 1 click Integration.
+          </p>
+        </div>
+        
+        <button className="bg-[#5243e8] text-white px-10 py-4 rounded-2xl flex items-center justify-center gap-3 hover:bg-[#4338CA] transition-all w-full md:w-auto font-bold text-lg shadow-md">
+          <span className="text-2xl">🎙️</span>
+          <a href="/#call" className="no-underline text-white">Try a conversation</a>
+        </button>
+      </div>
+
+    </div>
+  </div>
+</section>
   )
 }
