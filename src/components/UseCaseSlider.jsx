@@ -53,8 +53,8 @@ export default function VerticalScrollSlider() {
 
         {/* Heading */}
         <div className="text-center mb-10 md:mb-16">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-[#1A1A2E] mb-4 leading-tight">
-            Transform Customer Interaction with Proven Use Cases
+<h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[59px] !leading-[1] font-black text-[#1A1A2E] mb-4">
+              Transform Customer Interaction with Proven Use Cases
           </h2>
           <p className="text-[#6B7280] text-sm md:text-base max-w-2xl mx-auto">
             Efficiently manage all incoming interactions with AI-powered voice agents that schedule appointments

@@ -134,34 +134,40 @@ export default function VoiceAgentsSection() {
         <audio ref={audioRef} src={activeAgent.audio} onEnded={() => setIsPlaying(false)} />
 
         {/* Bottom 2 cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div className="bg-[#EDF2FF] rounded-[40px] p-8 md:p-10 flex flex-col items-start text-left relative overflow-hidden min-h-[445px] min-w-[910px]">
-            <h4 className="text-[60px] font-black text-[#1A1A2E] leading-tight mb-4">
-              400+ Neural <br /> AI Voices
-            </h4>
-            <p className="text-gray-500 text-[25px] max-w-[400px]">
-              Deliver high-quality conversations with 400 human-like neural voices and 140 accents and variants.
-            </p>
-            <img
-              src= {aivoice}
-              className="absolute right-0 top-0 h-full object-contain"
-              alt=""
-            />
-          </div>
+       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+  <div className="bg-[#EDF2FF] rounded-[40px] p-6 md:p-10 flex flex-col md:flex-row items-start text-left relative overflow-hidden min-h-[445px]">
+    
+    {/* TEXT */}
+    <div className="z-10 max-w-full md:max-w-[50%]">
+      <h4 className="text-[36px] md:text-[60px] font-black text-[#1A1A2E] leading-tight mb-4">
+        400+ Neural <br /> AI Voices
+      </h4>
+      <p className="text-gray-500 text-[18px] md:text-[25px]">
+        Deliver high-quality conversations with 400 human-like neural voices and 140 accents and variants.
+      </p>
+    </div>
 
-          {/* <div className="bg-[#1D1D2B] rounded-[40px] p-8 md:p-10 flex flex-col items-start text-left text-white  min-h-[445px] max-w-[440px]">
-            <span className="border border-white/20 px-4 py-1.5 rounded-full text-[11px]   mb-6">
-              1 click elevenlabs integration
-            </span>
-            <h4 className="text-[28px] md:text-[34px] font-black leading-tight mb-4">Elevenlabs</h4>
-            <p className="text-gray-400 text-sm max-w-[300px] mb-8">
-              Create voices & accents or clone your own voice with our ElevenLabs 1 click Integration.
-            </p>
-            <button className="bg-[#5048E5] text-white px-8 py-3 rounded-2xl   flex items-center gap-2 hover:bg-[#4338CA] transition-colors">
-              <span>🎙️</span> <a href="/#call">Try a conversation</a>
-            </button>
-          </div> */}
-        </div>
+    {/* IMAGE */}
+    <img
+      src={aivoice}
+      className="w-full mt-6 md:mt-0 md:w-[50%] md:absolute md:right-0 md:top-0 md:h-full object-contain"
+      alt=""
+    />
+  </div>
+
+  {/* <div className="bg-[#1D1D2B] rounded-[40px] p-8 md:p-10 flex flex-col items-start text-left text-white  min-h-[445px] max-w-[440px]">
+    <span className="border border-white/20 px-4 py-1.5 rounded-full text-[11px]   mb-6">
+      1 click elevenlabs integration
+    </span>
+    <h4 className="text-[28px] md:text-[34px] font-black leading-tight mb-4">Elevenlabs</h4>
+    <p className="text-gray-400 text-sm max-w-[300px] mb-8">
+      Create voices & accents or clone your own voice with our ElevenLabs 1 click Integration.
+    </p>
+    <button className="bg-[#5048E5] text-white px-8 py-3 rounded-2xl flex items-center gap-2 hover:bg-[#4338CA] transition-colors">
+      <span>🎙️</span> <a href="/#call">Try a conversation</a>
+    </button>
+  </div> */}
+</div>
 
       </div>
     </section>
