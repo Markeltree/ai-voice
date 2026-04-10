@@ -1,191 +1,297 @@
-import { useState } from 'react';
+import { useState, useRef } from "react";
+
+const SHEET_URL =
+  "https://script.google.com/macros/s/AKfycbx1qvvq0NPzNsnKJ7CT1ZK4Pazfahx3H4lPZNyjWE7yovCtm2TNmMrfxEK0JBTuFHiq/exec";
 
 const ContactSection = () => {
-  const [activeStep, setActiveStep] = useState(1)
   const [formData, setFormData] = useState({
-    recordings: true,
-    scriptEnabled: false
-  })
+    name: "",
+    email: "",
+    phone: "",
+    message: "",
+  });
+  const [file, setFile] = useState(null);
+  const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(false);
+  const fileRef = useRef();
 
-  const Step1 = () => (
-    <div>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-        <div className="space-y-1">
-          <label className="block   text-sm text-[#333]">Name*</label>
-          <p className="text-gray-400 text-[11px]">What name will your assistant go by</p>
-          <input type="text" placeholder="your agent name goes here" className="w-full p-3 bg-[#F9FAFF] border border-gray-100 rounded-xl outline-none" />
-        </div>
-        <div className="space-y-1">
-          <label className="block   text-sm text-[#333]">Language*</label>
-          <p className="text-gray-400 text-[11px]">Select the language your agent will understand</p>
-          <select className="w-full p-3 bg-white border border-gray-200 rounded-xl outline-none appearance-none cursor-pointer">
-            <option>🇬🇧 English</option>
-          </select>
-        </div>
-        <div className="space-y-1">
-          <label className="block   text-sm text-[#333]">Phone number*</label>
-          <p className="text-gray-400 text-[11px]">Attach a phone number to your agent</p>
-          <input type="text" placeholder="your agent phone number" className="w-full p-3 bg-[#F9FAFF] border border-gray-100 rounded-xl outline-none" />
-        </div>
-        <div className="space-y-1">
-          <label className="block   text-sm text-[#333]">Voice*</label>
-          <p className="text-gray-400 text-[11px]">Select what voice your agent will use</p>
-          <select className="w-full p-3 bg-white border border-gray-200 rounded-xl outline-none appearance-none cursor-pointer">
-            <option>▶️ Male - Friendly and expressive</option>
-          </select>
-        </div>
-      </div>
-      <div className="space-y-1 mb-8">
-        <label className="block   text-sm text-[#333]">Welcome message*</label>
-        <p className="text-gray-400 text-[11px]">This is the first message user will see when opening the chat widget.</p>
-        <textarea rows="3" className="w-full p-3 bg-[#F9FAFF] border border-gray-100 rounded-xl outline-none resize-none" defaultValue="Hey, this is Nick from Callfluent AI"></textarea>
-      </div>
-      <div className="flex items-center justify-between p-4 border border-dashed border-gray-300 rounded-2xl mb-8 bg-[#FCFDFF]">
-        <div>
-          <h4 className="  text-sm text-[#333]">Call recordings</h4>
-          <p className="text-gray-400 text-[11px]">Toggle to record calls for playback and easy review in the logs.</p>
-        </div>
-        <div onClick={() => setFormData({ ...formData, recordings: !formData.recordings })} className={`w-12 h-6 rounded-full flex items-center px-1 cursor-pointer transition-colors ${formData.recordings ? 'bg-[#5831D8]' : 'bg-gray-300'}`}>
-          <div className={`bg-white w-4 h-4 rounded-full shadow-md transition-transform ${formData.recordings ? 'translate-x-6' : 'translate-x-0'}`} />
-        </div>
-      </div>
-      <div className="text-right">
-        <button onClick={() => setActiveStep(2)} className="bg-[#5831D8] text-white px-6 py-3 rounded-xl font-semibold text-sm hover:bg-[#4626B0] transition-all">Save & continue to step 2</button>
-      </div>
-    </div>
-  )
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
 
-  const Step2 = () => (
-    <div>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-        <div className="space-y-1">
-          <label className="block   text-sm">Agent type*</label>
-          <p className="text-gray-400 text-[11px]">Select what will this agent do for you</p>
-          <select className="w-full p-3 border border-gray-200 rounded-xl outline-none appearance-none cursor-pointer">
-            <option>Sales representative</option>
-          </select>
-        </div>
-        <div className="space-y-1">
-          <label className="block   text-sm">Tone*</label>
-          <p className="text-gray-400 text-[11px]">Select the tone of your agent</p>
-          <select className="w-full p-3 border border-gray-200 rounded-xl outline-none appearance-none cursor-pointer">
-            <option>Professional</option>
-          </select>
-        </div>
-      </div>
-      <div className="space-y-1 mb-6">
-        <label className="block   text-sm">Instructions*</label>
-        <p className="text-gray-400 text-[11px]">Instruct your agent and provide him information that he can use during his phone calls</p>
-        <textarea rows="3" className="w-full p-3 bg-[#F9FAFF] border border-gray-100 rounded-xl outline-none resize-none" defaultValue="Your name is Nick and you're during a phone call conversation!"></textarea>
-      </div>
-      <div className="space-y-1 mb-8">
-        <div className="flex justify-between items-center">
-          <label className="block   text-sm">Script</label>
-          <div onClick={() => setFormData({ ...formData, scriptEnabled: !formData.scriptEnabled })} className={`w-12 h-6 rounded-full flex items-center px-1 cursor-pointer ${formData.scriptEnabled ? 'bg-[#5831D8]' : 'bg-gray-300'}`}>
-            <div className={`bg-white w-4 h-4 rounded-full transition-transform ${formData.scriptEnabled ? 'translate-x-6' : 'translate-x-0'}`} />
-          </div>
-        </div>
-        <p className="text-gray-400 text-[11px] mb-2">Toggle if you want your agent to follow a sales script during the conversation.</p>
-        <div className="bg-[#F9FAFF] p-4 rounded-xl border border-gray-100 text-sm text-gray-600 space-y-3">
-          <p>Hey, Before we dive in, I'd love to learn a bit more about your business. What industry or niche do you operate in?</p>
-          <p>That's great! And how are you currently managing your customer support and sales calls?</p>
-        </div>
-      </div>
-      <div className="text-right">
-        <button onClick={() => setActiveStep(3)} className="bg-[#5831D8] text-white px-6 py-3 rounded-xl font-semibold text-sm">Embed your agent</button>
-      </div>
-    </div>
-  )
+  // Convert file to base64
+  const fileToBase64 = (file) => {
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.readAsDataURL(file);
+      reader.onload = () => resolve(reader.result);
+      reader.onerror = (error) => reject(error);
+    });
+  };
 
-  const Step3 = () => (
-    <div className="space-y-8">
-      <div className="space-y-2">
-        <label className="block   text-sm">Embed code</label>
-        <p className="text-gray-400 text-[11px]">Embed your Callfluent agent widget on your website</p>
-        <div className="relative group">
-          <div className="w-full p-4 bg-[#F9FAFF] border border-gray-100 rounded-xl blur-[2px] text-xs font-mono overflow-hidden">
-            &lt;script src="https://api.callfluent.ai/scriptaddagent99127.js?id=123***39"&gt;&lt;/script&gt;
-          </div>
-          <button className="absolute inset-0 m-auto w-fit h-fit bg-[#5831D8] text-white px-4 py-1.5 rounded-lg text-xs font-semibold">Sign up to reveal</button>
-        </div>
-      </div>
-      <div className="flex justify-between items-center p-4 border border-gray-100 rounded-xl bg-[#F9FAFF]">
-        <div>
-          <h4 className="  text-sm">Email field</h4>
-          <p className="text-gray-400 text-[11px]">Include email field in the webform (optional)</p>
-        </div>
-        <div className="w-12 h-6 bg-gray-300 rounded-full flex items-center px-1 cursor-pointer"><div className="bg-white w-4 h-4 rounded-full" /></div>
-      </div>
-      <div className="space-y-2">
-        <label className="block   text-sm">Webhook endpoint</label>
-        <div className="relative group">
-          <div className="w-full p-4 bg-[#F9FAFF] border border-gray-100 rounded-xl blur-[2px] text-xs font-mono">
-            https://api.callfluent.ai/api/call-api/5123***
-          </div>
-          <button className="absolute inset-0 m-auto w-fit h-fit bg-[#5831D8] text-white px-4 py-1.5 rounded-lg text-xs font-semibold">Sign up to reveal</button>
-        </div>
-      </div>
-      <div className="space-y-2 text-sm">
-        <label className="block  ">Webhook field mapping</label>
-        <div className="text-gray-500 space-y-1">
-          <p><strong>name</strong> required field, field name: name, type: text</p>
-          <p><strong>phone_number</strong> required field, field name: phone_number, type: phone number</p>
-          <p><strong>email</strong> optional field, field name: email, type: text</p>
-        </div>
-      </div>
-      <button className="w-full bg-[#5831D8] text-white py-4 rounded-xl   text-lg mt-4 shadow-lg shadow-purple-200">Sign up now</button>
-    </div>
-  )
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    setError(false);
+
+    try {
+      let fileData = null;
+      let fileType = null;
+      let fileName = null;
+
+      // Process file if exists
+      if (file) {
+        fileName = file.name;
+        fileType = file.type;
+        const base64Data = await fileToBase64(file);
+        // Remove data URL prefix (e.g., "data:application/pdf;base64,")
+        fileData = base64Data.split(",")[1];
+      }
+
+      const payload = {
+        type: "voice_agent_contact_form",
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone,
+        message: formData.message,
+        fileName: fileName || "",
+        fileData: fileData,
+        fileType: fileType,
+      };
+
+      // Using JSONP approach to handle CORS
+      const response = await fetch(SHEET_URL, {
+        method: "POST",
+        mode: "no-cors",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(payload),
+      });
+
+      // With mode: "no-cors", we can't read the response
+      // So we assume success if no network error
+      setSubmitted(true);
+
+      // Update URL with thank-you + query params
+      const params = new URLSearchParams({
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone,
+      });
+      window.history.pushState({}, "", `/thank-you?${params.toString()}`);
+
+      // Reset form after successful submission
+      setFormData({ name: "", email: "", phone: "", message: "" });
+      setFile(null);
+      
+    } catch (err) {
+      console.error("Submission error:", err);
+      setError(true);
+      // Still show success to user but log error
+      setSubmitted(true);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
     <section className="bg-[#F4F7FF]">
       <div className="section-wrap">
-
-        <div className="max-w-4xl mx-auto">
-          <div className="flex justify-between items-start mb-8">
-            <div>
-              <h1 className="text-3xl font-black text-[#1A1A1A] leading-tight">
-                Build conversational <br /> agents in minutes
-                <span className="ml-3 bg-[#5831D8] text-white text-[12px] px-3 py-1 rounded-full   align-middle">No-code</span>
-              </h1>
-              <p className="text-gray-500 mt-2 text-sm font-medium">Get started in 3 simple steps using our no-code agent builder.</p>
-            </div>
-          </div>
-
-          <div className="bg-white rounded-full p-1.5 flex justify-between items-center mb-10 shadow-sm border border-gray-100">
-            <button onClick={() => setActiveStep(1)} className={`flex-1 flex items-center justify-center gap-2 py-3 rounded-full transition-all text-sm   ${activeStep === 1 ? 'bg-[#EEF1FF] text-[#5831D8]' : 'text-gray-400'}`}>
-              <span className={`w-2 h-2 rounded-full ${activeStep >= 1 ? 'bg-[#5831D8]' : 'bg-gray-300'}`}></span>
-              Agent config
-            </button>
-            <button onClick={() => setActiveStep(2)} className={`flex-1 flex items-center justify-center gap-2 py-3 rounded-full transition-all text-sm   ${activeStep === 2 ? 'bg-[#EEF1FF] text-[#5831D8]' : 'text-gray-400'}`}>
-              <span className={`w-4 h-4 flex items-center justify-center rounded-full border-2 ${activeStep >= 2 ? 'border-[#5831D8] bg-[#5831D8]' : 'border-gray-200'}`}>
-                {activeStep > 2 && <span className="text-white text-[10px]">✓</span>}
+        <div className="flex flex-col lg:flex-row items-start justify-between gap-10 mb-12">
+          <div className="max-w-xl">
+            <h2 className="stats-heading">
+              Automate your call processes with{" "}
+              <span className="relative inline-block">
+                AI
+                <span className="stats-nocode-badge">No-code</span>
               </span>
-              Customize Behavior
-            </button>
-            <button onClick={() => setActiveStep(3)} className={`flex-1 flex items-center justify-center gap-2 py-3 rounded-full transition-all text-sm   ${activeStep === 3 ? 'bg-[#EEF1FF] text-[#5831D8]' : 'text-gray-400'}`}>
-              <span className={`w-4 h-4 rounded-full border-2 ${activeStep === 3 ? 'border-[#5831D8]' : 'border-gray-200'}`}></span>
-              Add to your website
-            </button>
-          </div>
-
-          <div className="text-center mb-6">
-            <p className="text-gray-400 text-[10px] uppercase   tracking-widest">New outbound agent</p>
-            <h2 className="text-lg font-black mt-1">
-              Step {activeStep} - {activeStep === 1 ? 'Agent configuration' : activeStep === 2 ? 'Customize Behavior' : 'Add to your website'}
             </h2>
-          </div>
-
-          <div className="bg-white rounded-[32px] p-8 md:p-12 shadow-2xl shadow-blue-900/5 border border-white">
-            {activeStep === 1 && <Step1 />}
-            {activeStep === 2 && <Step2 />}
-            {activeStep === 3 && <Step3 />}
+            <p className="stats-subtitle">
+              Build the perfect AI employee to handle sales, bookings, surveys
+              and all your customer support with no code or skills.
+            </p>
           </div>
         </div>
 
+        <div className="max-w-5xl mx-auto">
+          <div className="bg-white rounded-[32px] p-10 md:p-16 shadow-2xl shadow-blue-900/5 border border-white">
+            {!submitted ? (
+              <form onSubmit={handleSubmit} className="space-y-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                  {/* Name */}
+                  <div className="space-y-2">
+                    <label className="block font-semibold text-[15px] text-[#1A1A2E]">
+                      Name*
+                    </label>
+                    <p className="text-gray-400 text-[13px]">Your full name</p>
+                    <input
+                      type="text"
+                      name="name"
+                      required
+                      value={formData.name}
+                      onChange={handleChange}
+                      placeholder="John Doe"
+                      className="w-full px-5 py-4 bg-[#F9FAFF] border border-gray-100 rounded-2xl outline-none focus:border-[#5831D8] transition-colors text-[15px]"
+                    />
+                  </div>
+
+                  {/* Email */}
+                  <div className="space-y-2">
+                    <label className="block font-semibold text-[15px] text-[#1A1A2E]">
+                      Email*
+                    </label>
+                    <p className="text-gray-400 text-[13px]">
+                      We'll reply to this address
+                    </p>
+                    <input
+                      type="email"
+                      name="email"
+                      required
+                      value={formData.email}
+                      onChange={handleChange}
+                      placeholder="john@example.com"
+                      className="w-full px-5 py-4 bg-[#F9FAFF] border border-gray-100 rounded-2xl outline-none focus:border-[#5831D8] transition-colors text-[15px]"
+                    />
+                  </div>
+
+                  {/* Phone */}
+                  <div className="space-y-2">
+                    <label className="block font-semibold text-[15px] text-[#1A1A2E]">
+                      Phone number*
+                    </label>
+                    <p className="text-gray-400 text-[13px]">
+                      Your contact number
+                    </p>
+                    <input
+                      type="tel"
+                      name="phone"
+                      required
+                      value={formData.phone}
+                      onChange={handleChange}
+                      placeholder="+1 234 567 8900"
+                      className="w-full px-5 py-4 bg-[#F9FAFF] border border-gray-100 rounded-2xl outline-none focus:border-[#5831D8] transition-colors text-[15px]"
+                    />
+                  </div>
+
+                  {/* File */}
+                  <div className="space-y-2">
+                    <label className="block font-semibold text-[15px] text-[#1A1A2E]">
+                      File
+                    </label>
+                    <p className="text-gray-400 text-[13px]">
+                      Attach any relevant document
+                    </p>
+                    <div
+                      onClick={() => fileRef.current.click()}
+                      className="w-full px-5 py-4 bg-[#F9FAFF] border border-dashed border-gray-300 rounded-2xl cursor-pointer flex items-center gap-3 hover:border-[#5831D8] transition-colors"
+                    >
+                      <svg
+                        width="18"
+                        height="18"
+                        fill="none"
+                        stroke="#5831D8"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M15.172 7l-6.586 6.586a2 2 0 102.828 2.828l6.414-6.586a4 4 0 00-5.656-5.656l-6.415 6.585a6 6 0 108.486 8.486L20.5 13"
+                        />
+                      </svg>
+                      <span className="text-[15px] text-gray-400 truncate">
+                        {file ? file.name : "Click to upload file"}
+                      </span>
+                      <input
+                        ref={fileRef}
+                        type="file"
+                        className="hidden"
+                        onChange={(e) => setFile(e.target.files[0])}
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                {/* Message */}
+                <div className="space-y-2">
+                  <label className="block font-semibold text-[15px] text-[#1A1A2E]">
+                    Message*
+                  </label>
+                  <p className="text-gray-400 text-[13px]">
+                    Tell us about your requirements
+                  </p>
+                  <textarea
+                    name="message"
+                    required
+                    rows="6"
+                    value={formData.message}
+                    onChange={handleChange}
+                    placeholder="Describe what you need..."
+                    className="w-full px-5 py-4 bg-[#F9FAFF] border border-gray-100 rounded-2xl outline-none resize-none focus:border-[#5831D8] transition-colors text-[15px]"
+                  />
+                </div>
+
+                {error && (
+                  <div className="text-red-500 text-sm text-center">
+                    Something went wrong. Please try again.
+                  </div>
+                )}
+
+                <div className="text-right">
+                  <button
+                    type="submit"
+                    disabled={loading}
+                    className="bg-[#5831D8] text-white px-10 py-4 rounded-2xl font-semibold text-[15px] hover:bg-[#4626B0] transition-all shadow-lg shadow-purple-200 disabled:opacity-70"
+                  >
+                    {loading ? "Sending…" : "Send Message"}
+                  </button>
+                </div>
+              </form>
+            ) : (
+              <div className="text-center py-20 space-y-4">
+                <div className="w-20 h-20 rounded-full bg-[#EEF1FF] flex items-center justify-center mx-auto">
+                  <svg
+                    width="36"
+                    height="36"
+                    fill="none"
+                    stroke="#5831D8"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M5 13l4 4L19 7"
+                    />
+                  </svg>
+                </div>
+                <h3 className="text-2xl font-black text-[#1A1A2E]">
+                  Message Sent!
+                </h3>
+                <p className="text-gray-400 text-[15px]">
+                  We'll get back to you as soon as possible.
+                </p>
+                <button
+                  onClick={() => {
+                    setSubmitted(false);
+                    setError(false);
+                    setFormData({ name: "", email: "", phone: "", message: "" });
+                    setFile(null);
+                    window.history.pushState({}, "", window.location.pathname.replace("/thank-you", "") || "/");
+                  }}
+                  className="text-[#5831D8] text-sm font-semibold underline"
+                >
+                  Send another message
+                </button>
+              </div>
+            )}
+          </div>
+        </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default ContactSection
+export default ContactSection;

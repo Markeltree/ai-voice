@@ -58,7 +58,14 @@ export default function UseCasesSection() {
         </div>
 
         <div className="relative rounded-[40px] overflow-hidden shadow-2xl">
-          <img src={tabImages[activeTab]} alt={activeTab} className="w-full h-auto object-cover animate-in fade-in zoom-in-95" key={activeTab} />
+          {Object.entries(tabImages).map(([id, src]) => (
+            <img
+              key={id}
+              src={src}
+              alt={id}
+              className={`w-full h-auto object-cover transition-opacity duration-300 ${activeTab === id ? 'opacity-100' : 'opacity-0 absolute inset-0'}`}
+            />
+          ))}
         </div>
 
       </div>

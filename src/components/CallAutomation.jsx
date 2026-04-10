@@ -58,15 +58,15 @@ const features = [
 
 export default function CallAutomation() {
   return (
-    <section className="bg-[#f8f9ff] py-16">
-      <div className="max-w-7xl mx-auto px-4">
+    <section className="bg-[#f8f9ff]">
+      <div className="section-wrap px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
           <div className="flex flex-col justify-center p-6">
-            <h2 className="text-4xl font-bold text-slate-900 leading-tight">
+            <h2 className="text-[36px] sm:text-[48px] md:text-[60px] font-[600] text-slate-900 leading-tight">
               smarter<br />conversations<br />effortless
             </h2>
-            <p className="text-indigo-600 font-semibold mt-2 uppercase tracking-wider text-sm">
+            <p className="text-[18px] sm:text-[24px] md:text-[30px] font-[200] mt-2 uppercase tracking-wider">
               call automations
             </p>
           </div>

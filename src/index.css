@@ -82,10 +82,10 @@ input:focus {
 }
 
 .hero-badge-yellow {
-  background: #F5C518;
+  background: #93D169;
+  box-shadow: 0 4px 16px #93d16986;
   padding: 9px 20px;
   font-size: clamp(12px, 1.2vw, 18px);
-  box-shadow: 0 4px 16px rgba(245, 197, 24, 0.35);
   position: absolute;
   left: -140px;
   top: 130px;
@@ -98,10 +98,10 @@ input:focus {
 }
 
 .hero-badge-purple {
-  background: #5048E5;
+  background: #93D169;
+  box-shadow: 0 4px 16px #93d16986;
   padding: 9px 22px;
   font-size: clamp(12px, 1.2vw, 18px);
-  box-shadow: 0 4px 16px rgba(80, 72, 229, 0.4);
   position: absolute;
   right: -60px;
   top: 45px;
@@ -109,7 +109,7 @@ input:focus {
   z-index: 10;
   border-radius: 9999px;
   font-weight: 700;
-  color: #fff;
+  color: #000000;
   white-space: nowrap;
 }
 
@@ -353,24 +353,24 @@ input:focus {
 }
 
 .stats-heading {
-  font-size: 60px;
+  font-size: clamp(1.8rem, 4vw, 60px);
   line-height: 1.15;
   font-weight: 700;
   color: #111827;
 }
 
 .stats-nocode-badge {
-  background: #F5C518;
+  background: #93D169;
+  box-shadow: 0 4px 16px #93d16986;
   font-size: 15px;
   padding: 4px 14px;
   top: -6px;
   left: calc(100% + 8px);
   white-space: nowrap;
-  box-shadow: 0 2px 10px rgba(245, 197, 24, 0.4);
   transform: rotate(-8deg);
   border-radius: 9999px;
   font-weight: 700;
-  color: #111827;
+  color: #000000;
   position: absolute;
 }
 
@@ -423,28 +423,27 @@ input:focus {
 
 .stats-card-desc {
   font-size: 24px;
-  line-height: 22px;
+  line-height: 1.4;
 }
 
 /* ─────────────────────────────────────────────
    USE CASES SECTION
 ───────────────────────────────────────────── */
 .usecase-heading {
-  font-size: 70px;
+  font-size: clamp(1.8rem, 5vw, 70px);
   font-weight: 600;
   color: #111827;
-  line-height: 60px;
+  line-height: 1.1;
   margin-bottom: 30px;
 }
 
 .usecase-text {
-  font-size: 25px;
+  font-size: clamp(1rem, 2.5vw, 25px);
   font-weight: 400;
-  line-height: 30px;
+  line-height: 1.5;
   color: #111827;
   max-width: 1000px;
   margin-bottom: 30px;
-
 }
 
 .tab-btn-active {
@@ -471,7 +470,7 @@ input:focus {
 }
 
 .testimonial-quote {
-  color: #CDCDD2;
+  color: #000000;
   font-size: 14px;
   line-height: 1.7;
   font-style: italic;
@@ -480,19 +479,20 @@ input:focus {
 }
 
 .testimonials-heading {
-  font-size: clamp(1.4rem, 3vw, 2.5rem);
-  font-weight: 800;
-  color: #fff;
+  font-size: clamp(1.6rem, 4vw, 60px);
+  font-weight: 600;
+  line-height: 1.15;
+  color: #000000;
 }
 
 /* ─────────────────────────────────────────────
    FAQ SECTION
 ───────────────────────────────────────────── */
 .faq-heading {
-  font-size: clamp(1.3rem, 3vw, 2.8rem);
-  font-weight: 700;
+  font-size: clamp(1.6rem, 4vw, 60px);
+  font-weight: 600;
   color: #0f172a;
-  line-height: 1.2;
+  line-height: 1.15;
 }
 
 /* ─────────────────────────────────────────────
@@ -517,7 +517,7 @@ input:focus {
    AGENT BUILDER SECTION
 ───────────────────────────────────────────── */
 .agent-heading {
-  font-size: 60px;
+  font-size: clamp(1.8rem, 4vw, 60px);
   font-weight: 600;
   color: #1A1A2E;
   line-height: 1.2;
@@ -526,7 +526,7 @@ input:focus {
 }
 
 .agent-cards-wrap {
-  display: flex;
+  display: none;
   flex-wrap: nowrap;
   justify-content: center;
   align-items: stretch;
@@ -815,6 +815,7 @@ input:focus {
 
   /* Agent Builder */
   .agent-cards-wrap {
+    display: flex;
     flex-wrap: wrap;
     gap: 0.75rem;
   }
@@ -854,22 +855,17 @@ input:focus {
 
   /* CTA card */
   .cta-card {
-    min-height: 350px;
+    min-height: 320px;
     border-radius: 1.5rem;
   }
 
-  /* Headings */
-  .usecase-heading,
-  .testimonials-heading {
-    font-size: clamp(1.3rem, 4vw, 2rem);
+  /* Stats card desc */
+  .stats-card-desc {
+    font-size: 18px;
   }
 
-  .faq-heading {
-    font-size: clamp(1.2rem, 4vw, 1.8rem);
-  }
-
-  .agent-heading {
-    font-size: clamp(1.3rem, 4vw, 2rem);
+  .stats-stat-pill {
+    font-size: 14px;
   }
 }
 

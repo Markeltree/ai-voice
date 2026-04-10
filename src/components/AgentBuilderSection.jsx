@@ -58,13 +58,13 @@ export default function VoiceAgentsSection() {
   }
 
   return (
-    <section className="bg-white py-16">
+    <section className="bg-white">
   <div className="section-wrap max-w-[1400px] mx-auto px-6">
 
     {/* Header */}
     <div className="relative mb-14 text-center">
       <div className="absolute left-[10%] top-0 -rotate-12 hidden md:block">
-        <span className="bg-[#FFD641] text-[13px] px-5 py-2 rounded-full shadow-sm font-bold">
+        <span className="bg-[#93D169] text-[13px] px-5 py-2 rounded-full shadow-sm font-bold">
           in 40+ languages
         </span>
       </div>
@@ -81,27 +81,60 @@ export default function VoiceAgentsSection() {
       <span className="text-2xl">🎧</span> 400+ Neural Voices For Lifelike Voice Agents
     </div>
 
-    {/* Agents — desktop: horizontal expand, mobile: vertical stack */}
-    <div className="agent-cards-wrap mb-16">
+    {/* Mobile: all cards fully expanded, image-left content-right */}
+    <div className="md:hidden flex flex-col gap-4 mb-16">
+      {agents.map((agent) => (
+        <div key={agent.id} className="rounded-[28px] overflow-hidden" style={{ background: agent.bgColor }}>
+          <div className="flex items-stretch min-h-[190px]">
+            <div className="relative w-[38%] flex-shrink-0">
+              <img src={agent.img} className="w-full h-full object-cover" alt={agent.name} />
+              <div className="absolute bottom-3 left-1/2 -translate-x-1/2 bg-white px-3 py-1 rounded-xl shadow-md text-xs font-medium whitespace-nowrap">
+                {agent.name}
+              </div>
+            </div>
+            <div className="flex-1 p-4 flex flex-col justify-between">
+              <div>
+                <span className="bg-black/10 px-3 py-1 rounded-lg text-xs font-semibold text-[#1A1A2E] mb-2 inline-block">{agent.type}</span>
+                <h3 className="text-xl font-black text-[#1A1A2E] mb-1 leading-tight">{agent.title}</h3>
+                <p className="text-xs text-[#1A1A2E]/70 leading-relaxed mb-3">{agent.desc}</p>
+              </div>
+              <div className="flex items-center gap-2">
+                <button
+                  onClick={() => { handleAgentClick(agent); togglePlay(); }}
+                  className="w-9 h-9 rounded-full bg-white flex items-center justify-center shadow-md flex-shrink-0"
+                >
+                  {isPlaying && activeAgent.id === agent.id ? (
+                    <div className="flex gap-1"><div className="w-1 h-3 bg-gray-800"></div><div className="w-1 h-3 bg-gray-800"></div></div>
+                  ) : (
+                    <div className="ml-0.5 w-0 h-0 border-t-[6px] border-t-transparent border-l-[10px] border-l-gray-800 border-b-[6px] border-b-transparent"></div>
+                  )}
+                </button>
+                <div className="flex-1 h-1.5 bg-black/10 rounded-full overflow-hidden">
+                  <div className={`h-full bg-black/25 ${isPlaying && activeAgent.id === agent.id ? "w-full transition-all duration-[30s] linear" : "w-0"}`}></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    {/* Desktop: horizontal expand */}
+    <div className="agent-cards-wrap mb-16 hidden md:flex">
       {agents.map((agent) => (
         <div
           key={agent.id}
           onClick={() => handleAgentClick(agent)}
           className="agent-card-item cursor-pointer"
-          style={{
-            background: activeAgent.id === agent.id ? agent.bgColor : 'transparent',
-          }}
+          style={{ background: activeAgent.id === agent.id ? agent.bgColor : 'transparent' }}
           data-active={activeAgent.id === agent.id ? 'true' : 'false'}
         >
-          {/* Image side */}
           <div className={`agent-card-img-wrap ${activeAgent.id === agent.id ? 'agent-card-img-active' : 'agent-card-img-inactive'}`}>
             <img src={agent.img} className="w-full h-full object-cover" alt={agent.name} />
             <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-white px-5 py-1.5 rounded-xl shadow-md text-sm text-gray-800 whitespace-nowrap font-medium">
               {agent.name}
             </div>
           </div>
-
-          {/* Content side — only when active */}
           {activeAgent.id === agent.id && (
             <div className="agent-card-content">
               <span className="bg-black/10 w-fit px-4 py-1 rounded-lg text-[22px] text-[#1A1A2E] mb-4 block font-semibold">{agent.type}</span>
@@ -113,10 +146,7 @@ export default function VoiceAgentsSection() {
                   className="w-12 h-12 rounded-full bg-white flex items-center justify-center shadow-lg hover:scale-105 transition-transform flex-shrink-0"
                 >
                   {isPlaying ? (
-                    <div className="flex gap-1.5">
-                      <div className="w-1 h-4 bg-gray-800"></div>
-                      <div className="w-1 h-4 bg-gray-800"></div>
-                    </div>
+                    <div className="flex gap-1.5"><div className="w-1 h-4 bg-gray-800"></div><div className="w-1 h-4 bg-gray-800"></div></div>
                   ) : (
                     <div className="ml-1 w-0 h-0 border-t-[8px] border-t-transparent border-l-[12px] border-l-gray-800 border-b-[8px] border-b-transparent"></div>
                   )}
@@ -137,8 +167,8 @@ export default function VoiceAgentsSection() {
     <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
       
       {/* 400+ Neural AI Voices Card */}
-      <div className="lg:col-span-2 bg-[#EDF2FF] rounded-[48px] p-10 md:p-14 flex flex-col md:flex-row items-center relative overflow-hidden min-h-[460px]">
-        <div className="z-10 w-full md:w-[55%]">
+      <div className="lg:col-span-2 bg-[#EDF2FF] rounded-[48px] flex flex-col md:flex-row items-center relative overflow-hidden min-h-[400px]">
+        <div className="z-10 w-full md:w-[55%] p-10 md:p-14">
           <h4 className="text-[44px] md:text-[62px] font-black text-[#1A1A2E] leading-[1.1] mb-6 tracking-tight">
             400+ Neural <br /> AI Voices
           </h4>
@@ -150,14 +180,14 @@ export default function VoiceAgentsSection() {
         <div className="w-full md:w-[45%] flex justify-center md:justify-end mt-10 md:mt-0">
           <img
             src={aivoice}
-            className="w-full max-w-[400px] object-contain md:scale-125 md:translate-x-4"
+            className="w-full max-w-[400px] cover md:scale-125 md:translate-x-4"
             alt="AI Interface"
           />
         </div>
       </div>
 
       {/* Elevenlabs Card */}
-      <div className="lg:col-span-1 bg-[#1A1A26] rounded-[48px] p-10 flex flex-col items-start justify-between text-left text-white min-h-[460px]">
+      <div className="lg:col-span-1 bg-[#1A1A26] rounded-[48px] p-10 flex flex-col items-start justify-between text-left text-white min-h-[400px]">
         <div>
           <span className="border border-white/20 px-5 py-2 rounded-full text-[12px] font-medium inline-block mb-10 tracking-widest uppercase">
             1 click elevenlabs integration

@@ -8,21 +8,21 @@ const FeaturesSection = () => {
   const voices = ['Nick', 'Tony HD'];
 
   return (
-    <section className="bg-white py-24 font-sans">
+    <section className="bg-white py-24">
       <style dangerouslySetInnerHTML={{ __html: `
         .custom-shadow { box-shadow: 0 20px 40px -15px rgba(0,0,0,0.3); }
         .feature-card:hover { transform: translateY(-5px); transition: all 0.3s ease; }
         .dropdown-animate { transition: all 0.2s ease-in-out; }
       `}} />
 
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
 
           {/* ── Left: Interactive Feature Cards ── */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
 
             {/* Web Calls */}
-            <div className="feature-card bg-[#322F3D] rounded-[2.5rem] p-8 flex flex-col justify-between min-h-[290px]">
+            <div className="feature-card bg-[#322F3D] rounded-[2rem] sm:rounded-[2.5rem] p-6 sm:p-8 flex flex-col justify-between min-h-[240px] sm:min-h-[290px]">
               <div className="bg-[#494655] rounded-2xl p-3 flex items-center justify-between border border-white/5 mb-auto">
                 <div className="flex items-center gap-3">
                   <img
@@ -48,7 +48,7 @@ const FeaturesSection = () => {
             </div>
 
             {/* Phone Calls - Flaticon Keypad Style */}
-            <div className="feature-card bg-[#322F3D] rounded-[2.5rem] p-8 flex flex-col justify-between min-h-[290px]">
+            <div className="feature-card bg-[#322F3D] rounded-[2rem] sm:rounded-[2.5rem] p-6 sm:p-8 flex flex-col justify-between min-h-[240px] sm:min-h-[290px]">
               <div className="w-14 h-14 bg-[#FF4545] rounded-full flex items-center justify-center mb-auto custom-shadow">
                 <svg width="24" height="24" fill="white" viewBox="0 0 24 24">
                   <circle cx="6" cy="6" r="2.2"/><circle cx="12" cy="6" r="2.2"/><circle cx="18" cy="6" r="2.2"/>
@@ -63,7 +63,7 @@ const FeaturesSection = () => {
             </div>
 
             {/* Fast Responses - Active Switch */}
-            <div className="feature-card bg-[#322F3D] rounded-[2.5rem] p-8 flex flex-col justify-between min-h-[290px]">
+            <div className="feature-card bg-[#322F3D] rounded-[2rem] sm:rounded-[2.5rem] p-6 sm:p-8 flex flex-col justify-between min-h-[240px] sm:min-h-[290px]">
               <div 
                 onClick={() => setIsOn(!isOn)}
                 className="bg-[#444150] w-fit rounded-xl p-1.5 flex items-center cursor-pointer select-none transition-all duration-300"
@@ -78,7 +78,7 @@ const FeaturesSection = () => {
             </div>
 
             {/* Realistic Voices - Active Dropdown */}
-            <div className="feature-card bg-[#322F3D] rounded-[2.5rem] p-8 flex flex-col justify-between min-h-[290px] relative">
+            <div className="feature-card bg-[#322F3D] rounded-[2rem] sm:rounded-[2.5rem] p-6 sm:p-8 flex flex-col justify-between min-h-[240px] sm:min-h-[290px] relative">
               <div className="relative z-20">
                 <div 
                   onClick={() => setIsOpen(!isOpen)}
@@ -115,7 +115,7 @@ const FeaturesSection = () => {
           </div>
 
           {/* ── Right: Testimonials ── */}
-          <div className="flex flex-col gap-12 lg:pl-10">
+          <div className="flex flex-col gap-8 lg:gap-12 lg:pl-10">
             {/* Carlos */}
             <div className="flex gap-6">
               <div className="w-16 h-16 rounded-full bg-[#98DB1D] flex-shrink-0 flex items-center justify-center text-black font-black text-xl shadow-lg">C</div>

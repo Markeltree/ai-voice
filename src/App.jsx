@@ -24,7 +24,6 @@ export default function App() {
       <AgentBuilderSection />
       <IntegrationsSection />
       <UseCaseSlider/>
-      <TestimonialsSection />
       <ContactSection/>
       <CtaSection />
       <CallAutomation />

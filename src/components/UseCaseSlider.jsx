@@ -98,7 +98,7 @@ export default function VerticalScrollSlider() {
         <div
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
-          className="hidden md:flex h-[500px] lg:h-[600px] rounded-[40px] overflow-hidden border border-gray-100 shadow-sm relative"
+          className="hidden md:flex md:h-[420px] lg:h-[550px] xl:h-[600px] rounded-[28px] lg:rounded-[40px] overflow-hidden border border-gray-100 shadow-sm relative"
         >
           {/* Left: visual */}
           <motion.div

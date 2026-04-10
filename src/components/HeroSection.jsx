@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import phoneBanner from "../assets/phone-banner-new.svg";
+import phoneBanner from "../assets/phone-banner.png";
 import arrowIcon from "../assets/banner-free-demo-icon.svg";
 import flagIcon from "../assets/images/flags.png";
 import avatarIcon from "../assets/images/testi10.png";
