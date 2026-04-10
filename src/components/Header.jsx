@@ -1,16 +1,6 @@
 import { useState } from 'react'
+import logo from '../assets/images/mini-logo.png';
 
-const Logo = () => (
-  <div className="flex items-center gap-2.5 cursor-pointer select-none">
-    <div className="w-9 h-9 rounded-lg bg-indigo-600 flex items-center justify-center shadow-sm">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-        <rect x="3" y="4" width="3" height="16" rx="1.5" fill="white" />
-        <rect x="10.5" y="4" width="3" height="16" rx="1.5" fill="white" opacity="0.7" />
-        <rect x="18" y="4" width="3" height="16" rx="1.5" fill="white" opacity="0.4" />
-      </svg>
-    </div>
-  </div>
-)
 
 const MobileMenuIcon = ({ open }) => (
   <div className="flex flex-col justify-center items-center w-6 h-6 gap-1.5">
@@ -33,7 +23,7 @@ export default function Header() {
     <header className="w-full sticky top-0 z-50 bg-white/90 backdrop-blur-md header-wrap">
       <div className="max-w-site mx-auto px-6">
         <div className="flex items-center justify-between h-full">
-          <Logo />
+          <img src={logo} alt='main logo' className='main-logo' />
 
           <nav className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => (
@@ -43,7 +33,7 @@ export default function Header() {
             ))}
           </nav>
 
-          <div className="hidden md:flex items-center">
+          <div className="hidden md:flex items-center invisible">
             <a href="#" className="text-sm font-semibold text-gray-800 border border-gray-300 rounded-full px-6 py-2 hover:border-indigo-500 hover:text-indigo-600 transition-all duration-200">
               Sign In
             </a>
