@@ -2,10 +2,8 @@ import Header            from './components/Header'
 import HeroSection        from './components/HeroSection'
 import StatsSection       from './components/StatsSection'
 import UseCasesSection    from './components/UseCasesSection'
-import FeaturesSection    from './components/FeaturesSection'
 import AgentBuilderSection from './components/AgentBuilderSection'
 import IntegrationsSection from './components/IntegrationsSection'
-import TestimonialsSection from './components/TestimonialsSection'
 import CtaSection         from './components/CtaSection'
 import Footer             from './components/Footer'
 import UseCaseSlider from './components/UseCaseSlider'
@@ -20,7 +18,6 @@ export default function App() {
       <HeroSection />
       <StatsSection />
       <UseCasesSection />
-      <FeaturesSection />
       <AgentBuilderSection />
       <IntegrationsSection />
       <UseCaseSlider/>

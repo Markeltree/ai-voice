@@ -127,7 +127,7 @@ const FeaturesSection = () => {
                   ))}
                 </div>
                 <p className="text-[#4B5563] text-[18px] leading-relaxed mt-5">
-                  I've purchased several AI apps to automate both inbound and outbound calls, and Callfluent AI is by far the best one I've used.
+                  I've purchased several AI apps to automate both inbound and outbound calls, and Markeltree AI is by far the best one I've used.
                 </p>
                 <p className="text-[#4B5563] text-[18px] leading-relaxed mt-4">
                   The setup was quick and easy, making it a breeze to get up and running.
@@ -148,7 +148,7 @@ const FeaturesSection = () => {
                   ))}
                 </div>
                 <p className="text-[#4B5563] text-[18px] leading-relaxed mt-5">
-                  CallFluent is easy to set up and white label because when I don't know how to do something, their support team answers quickly, and the knowledge that they give is easy to understand.
+                  Markeltree is easy to set up and white label because when I don't know how to do something, their support team answers quickly, and the knowledge that they give is easy to understand.
                 </p>
               </div>
             </div>

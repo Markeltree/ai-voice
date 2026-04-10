@@ -2,13 +2,13 @@ import { useState } from 'react'
 import { Plus, X } from 'lucide-react'
 
 const faqData = [
-  { question: "Do I need to install any software to use CallFluent AI?",            answer: "No installation needed! CallFluent AI is a 100% cloud-based platform. This means you can access it instantly from any device with an internet connection – anytime, anywhere – with no downloads or complex setup required." },
-  { question: "How can CallFluent AI improve my sales calls?",                       answer: "Our AI agents are trained on high-converting sales scripts and can handle lead qualification, appointment setting, and follow-ups 24/7 without fatigue." },
-  { question: "How does CallFluent AI enhance customer support?",                    answer: "It provides instant responses to common queries, reduces wait times to zero, and can escalate complex issues to human agents seamlessly." },
-  { question: "Is CallFluent AI effective for E-commerce businesses?",              answer: "Absolutely. It can handle order tracking inquiries, process returns, and even suggest products based on customer preferences." },
-  { question: "I run a local business. Can CallFluent AI still help me?",           answer: "Yes, it's perfect for local services like dental clinics or law firms to manage bookings and answer basic service questions after hours." },
-  { question: "Does CallFluent AI work on Mac, Windows, or other operating systems?", answer: "Since it is web-based, it works perfectly on any OS via a modern web browser like Chrome, Safari, or Edge." },
-  { question: "How easily does CallFluent AI integrate with my existing tools?",    answer: "We offer native integrations with popular CRMs and Zapier support to connect with thousands of other business tools." },
+  { question: "Do I need to install any software to use Markeltree AI?",            answer: "No installation needed! Markeltree AI is a 100% cloud-based platform. This means you can access it instantly from any device with an internet connection – anytime, anywhere – with no downloads or complex setup required." },
+  { question: "How can Markeltree AI improve my sales calls?",                       answer: "Our AI agents are trained on high-converting sales scripts and can handle lead qualification, appointment setting, and follow-ups 24/7 without fatigue." },
+  { question: "How does Markeltree AI enhance customer support?",                    answer: "It provides instant responses to common queries, reduces wait times to zero, and can escalate complex issues to human agents seamlessly." },
+  { question: "Is Markeltree AI effective for E-commerce businesses?",              answer: "Absolutely. It can handle order tracking inquiries, process returns, and even suggest products based on customer preferences." },
+  { question: "I run a local business. Can Markeltree AI still help me?",           answer: "Yes, it's perfect for local services like dental clinics or law firms to manage bookings and answer basic service questions after hours." },
+  { question: "Does Markeltree AI work on Mac, Windows, or other operating systems?", answer: "Since it is web-based, it works perfectly on any OS via a modern web browser like Chrome, Safari, or Edge." },
+  { question: "How easily does Markeltree AI integrate with my existing tools?",    answer: "We offer native integrations with popular CRMs and Zapier support to connect with thousands of other business tools." },
   { question: "How much control do I have over the AI agent's behavior and scripts?", answer: "You have full control. You can customize the tone, personality, and specific logic the AI follows during every interaction." },
 ]
 
@@ -21,10 +21,10 @@ export default function FAQ() {
 
         <div className="text-center mb-12">
           <h2 className="faq-heading mb-6">
-            Your Questions Answered: Unlock the<br className="hidden md:block" /> Power of CallFluent AI
+            Your Questions Answered: Unlock the<br className="hidden md:block" /> Power of Markeltree AI
           </h2>
           <p className="text-slate-500 text-lg max-w-3xl mx-auto">
-            Curious about how CallFluent AI can elevate your customer interactions and boost your bottom line?
+            Curious about how Markeltree AI can elevate your customer interactions and boost your bottom line?
             Find clear answers to common questions below and learn how our intelligent voice AI makes
             sophisticated communication simple and effective.
           </p>

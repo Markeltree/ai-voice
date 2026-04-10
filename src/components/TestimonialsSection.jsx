@@ -8,8 +8,8 @@ const testimonials = [
     name: 'Russ Ward',
     role: 'Agency owner',
     stars: 5,
-    title: 'CallFluent Was Much Better Than The Others I Tried!',
-    text: 'I started using CallFluent because the voice AI company I was originally using wasn\'t working correctly and my clients were all angry at me.',
+    title: 'Markeltree Was Much Better Than The Others I Tried!',
+    text: 'I started using Markeltree because the voice AI company I was originally using wasn\'t working correctly and my clients were all angry at me.',
     initials: 'RW',
     initialsBg: '#FCE7F3',
     initialsText: '#DB2777',
@@ -21,7 +21,7 @@ const testimonials = [
     role: 'Freelance designer',
     stars: 5,
     title: '',
-    text: 'For a brand like mine where engagement and clear communication are everything - CallFluent is helping us scale, automate.\n\nMore impact, less burnout, and major growth...',
+    text: 'For a brand like mine where engagement and clear communication are everything - Markeltree is helping us scale, automate.\n\nMore impact, less burnout, and major growth...',
     avatar: 'https://randomuser.me/api/portraits/men/32.jpg',
   },
   {
@@ -62,7 +62,7 @@ const testimonials = [
     role: 'Founder, Marketing Firm',
     stars: 5,
     title: 'Best Voice Quality',
-    text: 'I\'ve tried every AI calling tool out there. Callfluent is by far the best one I\'ve used. The voice quality is in a completely different league.',
+    text: 'I\'ve tried every AI calling tool out there. Markeltree is by far the best one I\'ve used. The voice quality is in a completely different league.',
     initials: 'CL',
     initialsBg: '#DDD6FE',
     initialsText: '#7C3AED',
@@ -83,7 +83,7 @@ export default function TestimonialsSection() {
         <div className="text-center mb-10 md:mb-20">
           <h2 className="text-[28px] sm:text-[38px] md:text-[52px] font-bold text-[#1A1A1A] mb-4 md:mb-6 leading-tight">Automating success, one call at a time</h2>
           <p className="text-[#6B7280] max-w-3xl mx-auto text-[15px] sm:text-[18px] md:text-[22px]">
-            Hear directly from our clients about the impact CallFluentAI's natural AI voice agents.
+            Hear directly from our clients about the impact MarkeltreeAI's natural AI voice agents.
           </p>
         </div>
 

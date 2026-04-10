@@ -73,7 +73,7 @@ export default function StatsSection() {
               </div>
             </div>
             <p className="stats-author-quote">
-              Callfluent is like having a powerhouse sales and support team working 24/7 - without missing a beat.
+              Markeltree is like having a powerhouse sales and support team working 24/7 - without missing a beat.
             </p>
           </div>
         </div>

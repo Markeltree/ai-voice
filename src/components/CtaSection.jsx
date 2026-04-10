@@ -25,7 +25,7 @@ export default function CtaSection() {
               </div>
               <h2 className="text-[32px] sm:text-[44px] md:text-[60px] font-[600] leading-tight">Rebrand with Ease</h2>
               <p className="text-white/80 text-[14px] sm:text-[18px] md:text-[25px] font-[400] leading-relaxed">
-                Whitelabel Callfluent AI for your agency's services with full flexibility.
+                Whitelabel Markeltree AI for your agency's services with full flexibility.
                 Customize domains, set up SMTP, and create a tailored platform
                 experience for clients at an unbeatable rate of $0.069 per minute.
               </p>

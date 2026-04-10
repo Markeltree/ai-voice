@@ -91,7 +91,7 @@ const PhoneMockup = () => {
             />
           </div>
           <div className="flex flex-col justify-center">
-            <p className="phone-avatar-name">Nick from Callfluent</p>
+            <p className="phone-avatar-name">Nick from Markeltree</p>
             <p className="phone-avatar-status">Available</p>
           </div>
         </div>
@@ -196,7 +196,7 @@ export default function HeroSection() {
               speaker
             </div>
             <div className="hero-float-badge-item">
-              Trained on Callfluent FAQs
+              Trained on Markeltree FAQs
             </div>
           </div>
 

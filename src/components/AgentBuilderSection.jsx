@@ -27,7 +27,7 @@ const agents = [
   {
     id: "sam", name: "Sam", img: agents3,
     audio: men1,
-    type: "CallFluent AI", title: "Demo Agent",
+    type: "Markeltree AI", title: "Demo Agent",
     desc: "Listen how our AI Voice Agent explains our service to a potential customer.",
     bgColor: "#FFB347",
   },

@@ -1,10 +1,10 @@
 import { useState } from 'react'
 
 const tabImages = {
-  'call-history':      'https://callfluent.com/wp-content/themes/callfluent/images/tab-dashboard.svg',
-  'advanced-settings': 'https://callfluent.com/wp-content/themes/callfluent/images/tab-dashboard-2.svg',
-  'realtime-actions':  'https://callfluent.com/wp-content/themes/callfluent/images/tab-dashboard.svg',
-  'api-forms':         'https://callfluent.com/wp-content/themes/callfluent/images/tab-dashboard-2.svg',
+  'call-history':      'https://Markeltree.com/wp-content/themes/Markeltree/images/tab-dashboard.svg',
+  'advanced-settings': 'https://Markeltree.com/wp-content/themes/Markeltree/images/tab-dashboard-2.svg',
+  'realtime-actions':  'https://Markeltree.com/wp-content/themes/Markeltree/images/tab-dashboard.svg',
+  'api-forms':         'https://Markeltree.com/wp-content/themes/Markeltree/images/tab-dashboard-2.svg',
 }
 
 const tabs = [
