@@ -1,24 +1,83 @@
 import { useState } from 'react';
-import tool1 from "../assets/images/tool-img-01.svg"
-import tool2 from "../assets/images/tool-img-02.svg"
-import tool3 from "../assets/images/tool-img-03.svg"
-import tool4 from "../assets/images/tool-img-04.svg"
-import tool5 from "../assets/images/tool-img-05.svg"
+import { BiVoicemail } from 'react-icons/bi';
+import { FaDatabase, FaHubspot, FaProjectDiagram } from 'react-icons/fa';
+import { MdOutlineCalendarToday, MdOutlineWebhook } from 'react-icons/md';
+import { SiN8N, SiOpenai, SiTwilio, SiZapier } from 'react-icons/si';
 
 const row1Data = [
-  { id: 'ghl',    name: 'GoHighLevel',     icon: tool1, desc: 'Schedule meetings in real-time with GHL Calendar.' },
-  { id: 'google', name: 'Google Calendar', icon: tool2, desc: 'Real-time appointment booking in Google Calendar.' },
-  { id: 'eleven', name: 'Elevenlabs',      icon: 'Eleven', desc: 'Import all your ElevenLabs voices with one click.' },
-  { id: 'openai', name: 'OpenAI',          icon: tool3, desc: 'Integrate with ChatGPT for advanced reasoning.' },
-  { id: 'zapier', name: 'Zapier',          icon: tool4, desc: 'Connect with 3000+ apps instantly via Zapier.' },
+  { 
+    id: 'ghl',    
+    name: 'GoHighLevel',     
+    icon: <FaHubspot className="w-10 h-10 text-blue-600" />, 
+    desc: 'Automate call workflows and manage leads with GHL\'s powerful CRM and voice integration.',
+    color: 'text-blue-600'
+  },
+  { 
+    id: 'google', 
+    name: 'Google Calendar', 
+    icon: <MdOutlineCalendarToday className="w-10 h-10 text-green-600" />, 
+    desc: 'Sync AI voice agents with Google Calendar for real-time appointment scheduling and booking.',
+    color: 'text-green-600'
+  },
+  { 
+    id: 'eleven', 
+    name: 'ElevenLabs',      
+    icon: <BiVoicemail className="w-10 h-10 text-purple-600" />, 
+    desc: 'Generate ultra-realistic human-like voices with ElevenLabs advanced voice synthesis.',
+    color: 'text-purple-600'
+  },
+  { 
+    id: 'openai', 
+    name: 'OpenAI',          
+    icon: <SiOpenai className="w-10 h-10 text-gray-800" />, 
+    desc: 'Power voice agents with GPT models for natural conversations and intelligent responses.',
+    color: 'text-gray-800'
+  },
+  { 
+    id: 'zapier', 
+    name: 'Zapier',          
+    icon: <SiZapier className="w-10 h-10 text-orange-500" />, 
+    desc: 'Connect voice agents to 6000+ apps and automate workflows without coding.',
+    color: 'text-orange-500'
+  },
 ]
 
 const row2Data = [
-  { id: 'n8n',     name: 'n8n',     icon: tool5, desc: 'Self-hosted workflow automation.' },
-  { id: 'make',    name: 'Make',    icon: tool3, desc: 'Automate tasks and exchange data with Make.' },
-  { id: 'twilio',  name: 'Twilio',  icon: tool2, desc: 'Global telephony infrastructure.' },
-  { id: 'webhook', name: 'Webhook', icon: tool3, desc: 'Data transfer between platforms via webhooks.' },
-  { id: 'crms',    name: 'CRMs',    icon: tool4, desc: 'Sync your customer data across all CRMs.' },
+  { 
+    id: 'n8n',     
+    name: 'n8n',     
+    icon: <SiN8N className="w-10 h-10 text-red-600" />, 
+    desc: 'Build custom voice agent workflows with open-source automation and fair-code licensing.',
+    color: 'text-red-600'
+  },
+  { 
+    id: 'make',    
+    name: 'Make',    
+    icon: <FaProjectDiagram className="w-10 h-10 text-blue-500" />, 
+    desc: 'Create visual automation scenarios to enhance voice agent capabilities and data flow.',
+    color: 'text-blue-500'
+  },
+  { 
+    id: 'twilio',  
+    name: 'Twilio',  
+    icon: <SiTwilio className="w-10 h-10 text-red-500" />, 
+    desc: 'Deploy AI voice agents with Twilio\'s reliable telephony infrastructure and APIs.',
+    color: 'text-red-500'
+  },
+  { 
+    id: 'webhook', 
+    name: 'Webhook', 
+    icon: <MdOutlineWebhook className="w-10 h-10 text-indigo-600" />, 
+    desc: 'Integrate voice agents with any external service using custom webhook endpoints.',
+    color: 'text-indigo-600'
+  },
+  { 
+    id: 'crms',    
+    name: 'CRMs',    
+    icon: <FaDatabase className="w-10 h-10 text-teal-600" />, 
+    desc: 'Sync voice agent conversations and data with Salesforce, HubSpot, and all major CRMs.',
+    color: 'text-teal-600'
+  },
 ]
 
 const ArrowIcon = () => (
@@ -27,19 +86,22 @@ const ArrowIcon = () => (
   </svg>
 )
 
+// Updated IconBox component to handle React Icons properly
 const IconBox = ({ item }) => (
   <div style={{ width: '64px', height: '64px' }} className="flex-shrink-0 flex items-center justify-center rounded-2xl overflow-hidden">
-    {item.icon === 'Eleven' ? (
+    {typeof item.icon === 'string' && item.icon === 'Eleven' ? (
       <div className="bg-black text-white w-full h-full rounded-2xl flex items-center justify-center text-[10px] font-bold text-center leading-tight p-2">Eleven<br/>Labs</div>
     ) : (
-      <img src={item.icon} alt={item.name} style={{ width: '64px', height: '64px' }} className="object-contain" />
+      <div className="w-full h-full rounded-2xl flex items-center justify-center bg-gray-50">
+        {item.icon}
+      </div>
     )}
   </div>
 )
 
 export default function IntegrationsSection() {
   const [activeRow1, setActiveRow1] = useState('ghl')
-  const [activeRow2, setActiveRow2] = useState('make')
+  const [activeRow2, setActiveRow2] = useState('n8n')
 
   const Card = ({ item, isActive, onClick }) => (
     <div
@@ -47,13 +109,11 @@ export default function IntegrationsSection() {
       className={`relative cursor-pointer rounded-[28px] border border-[#E5E7EB] bg-white shadow-sm hover:shadow-md transition-all duration-400
         /* mobile: full width, stacked */
         w-full p-6
-        /* desktop: fixed width, side by side */
-        md:p-8
       `}
       style={{
         /* desktop width only */
         ...(typeof window !== 'undefined' && window.innerWidth >= 768
-          ? { width: isActive ? '420px' : '185px', height: '190px', transition: 'all 0.4s cubic-bezier(0.4,0,0.2,1)' }
+          ? { width: isActive ? '420px' : '250px', height: '190px', transition: 'all 0.4s cubic-bezier(0.4,0,0.2,1)' }
           : {}
         )
       }}
@@ -97,9 +157,12 @@ export default function IntegrationsSection() {
       <div className="max-w-[1400px] mx-auto px-4">
 
         <div className="text-center mb-12 md:mb-16">
-          <h2 style={{ fontSize: '60px', fontWeight: 600 }} className="text-[#1A1A2E] mb-4 text-[36px] md:text-[60px]">Connect your tools</h2>
+          <h2 style={{ fontSize: '60px', fontWeight: 600 }} className="text-[#1A1A2E] mb-4 text-[36px] md:text-[60px]">
+            Tools We Use to Develop AI Voice Agents
+          </h2>
           <p style={{ fontWeight: 400 }} className="text-[#6B7280] text-[16px] md:text-[25px] max-w-2xl mx-auto">
-            Connect your voice agents to any platform with ease using our no-code integration tools, webhooks and forms
+            Our AI voice agent development company uses the most powerful and reliable tools 
+            in the industry to build, train, and deploy production-ready voice agents for your business.
           </p>
         </div>
 

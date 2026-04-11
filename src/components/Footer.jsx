@@ -12,8 +12,7 @@ export default function Footer() {
           <div className="max-w-sm">
             <img src={whiteLogo} alt="Markeltree" className="h-9 mb-5" />
             <p className="text-[#9090A8] text-lg leading-relaxed">
-              Next-generation AI voice agents for businesses and agencies. Make
-              and take calls 24/7 on autopilot.
+              Your business never sleeps again. Next-generation AI voice agents that make and take calls on full autopilot, day, night, weekends, always.
             </p>
           </div>
 

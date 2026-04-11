@@ -1,59 +1,29 @@
 const features = [
   { 
-    title: "Real-Time Text Messaging", 
-    description: "Enhance interactions with instant messages.", 
-    icon: "https://cdn-icons-png.flaticon.com/512/5968/5968771.png" // Example Flaticon URL
+    title: "Sales Agent", 
+    description: "Our AI voice agent development firm creates intelligent sales agents who prospect, pitch, and close 24/7. Outbound sales operations can be scaled in no time with AI voice agent development services that never go on leave.", 
+    icon: "https://cdn-icons-png.flaticon.com/512/3214/3214746.png" // Professional Growth/Sales Icon
   },
   { 
-    title: "Call Forwarding", 
-    description: "Real-time, direct calls to relevant team members.", 
-    icon: "https://cdn-icons-png.flaticon.com/512/483/483947.png" 
+    title: "Appointment Scheduler", 
+    description: "Let no more bookings fall through the cracks. Smart appointment scheduling agents are services we offer in our AI voice agent development, which validate availability, confirm slots, issue reminders, and manage rescheduling in real-time during the call.", 
+    icon: "https://cdn-icons-png.flaticon.com/512/3652/3652191.png" // Calendar/Clock Icon
   },
   { 
-    title: "Send Emails During Calls", 
-    description: "Enhance communication with real-time, detailed follow-ups.", 
-    icon: "https://cdn-icons-png.flaticon.com/512/732/732200.png" 
+    title: "Support / Customer Care", 
+    description: "Provide superior customer service 24/7, 7 days a week, without increasing the number of employees. Our AI voice agent development agency implements intelligent support agents that are trained on your FAQs, SOPs, and product documentation", 
+    icon: "https://cdn-icons-png.flaticon.com/512/1067/1067566.png" // Headset/Support Icon
   },
   { 
-    title: "Simplified Widget Setup", 
-    description: "Quick integration using our customisable & efficient widget system.", 
-    icon: "https://cdn-icons-png.flaticon.com/512/5994/5994831.png" 
+    title: "Inquiries", 
+    description: "Answer all incoming calls immediately: no hold time, no calls missed, and no angry customers. Our AI voice agent development services drive inquiry agents to respond to product questions, pricing questions, availability queries, and general information queries using your uploaded knowledge base.", 
+    icon: "https://cdn-icons-png.flaticon.com/512/471/471663.png" // Information/Inquiry Icon
   },
   { 
-    title: "Low Latency Responses", 
-    description: "Experience quick responses with 500 ms latency.", 
-    icon: "https://cdn-icons-png.flaticon.com/512/11649/11649580.png" 
-  },
-  { 
-    title: "1-Click Call Recordings", 
-    description: "Record calls with a single click for easy tracking and insights.", 
-    icon: "https://cdn-icons-png.flaticon.com/512/2618/2618245.png" 
-  },
-  { 
-    title: "Global Language Support", 
-    description: "Enable communication across a range of languages. Available in 30 languages.", 
-    icon: "https://cdn-icons-png.flaticon.com/512/814/814513.png" 
-  },
-  { 
-    title: "Wide Voice Range", 
-    description: "Access over 400 voices for diverse requirements.", 
-    icon: "https://cdn-icons-png.flaticon.com/512/3293/3293603.png" 
-  },
-  { 
-    title: "Advanced Call Summary", 
-    description: "Easily analyze and review call type, call summary and sentiment analysis.", 
-    icon: "https://cdn-icons-png.flaticon.com/512/3557/3557635.png" 
-  },
-  { 
-    title: "Collaborate in Workspaces", 
-    description: "Enhance teamwork with organized collaboration.", 
-    icon: "https://cdn-icons-png.flaticon.com/512/1256/1256650.png" 
-  },
-  { 
-    title: "Send and Receive Data", 
-    description: "Collect caller data during calls and send it to any platform efficiently.", 
-    icon: "https://cdn-icons-png.flaticon.com/512/2885/2885417.png" 
-  },
+    title: "Reception", 
+    description: "Get a professional front desk in your business that does not clock out. Our AI voice agent development is a company that creates virtual receptionist agents that welcome callers. Send them to the appropriate department or team member; take comprehensive messages; and call forwarding, all in a natural and non-robotic manner. ", 
+    icon: "https://cdn-icons-png.flaticon.com/512/13605/13605030.png" // Front Desk/Receptionist Icon
+  }
 ]
 
 export default function CallAutomation() {
@@ -64,10 +34,10 @@ export default function CallAutomation() {
 
           <div className="flex flex-col justify-center p-6">
             <h2 className="text-[36px] sm:text-[48px] md:text-[60px] font-[600] text-slate-900 leading-tight">
-              smarter<br />conversations<br />effortless
+             Powerful AI Voice Agent Solutions
             </h2>
             <p className="text-[18px] sm:text-[24px] md:text-[30px] font-[200] mt-2 uppercase tracking-wider">
-              call automations
+              Built for Growth
             </p>
           </div>
 

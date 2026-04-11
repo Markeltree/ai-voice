@@ -102,15 +102,14 @@ const ContactSection = () => {
         <div className="flex flex-col lg:flex-row items-start justify-between gap-10 mb-12">
           <div className="max-w-xl">
             <h2 className="stats-heading">
-              Automate your call processes with{" "}
+              Your Agent Starts {" "}
               <span className="relative inline-block">
-                AI
+                Here
                 <span className="stats-nocode-badge">No-code</span>
               </span>
             </h2>
             <p className="stats-subtitle">
-              Build the perfect AI employee to handle sales, bookings, surveys
-              and all your customer support with no code or skills.
+             Tell us your goals and we'll have your AI voice agent live within days.
             </p>
           </div>
         </div>

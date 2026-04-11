@@ -3,30 +3,70 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const slides = [
   {
-    id: 1, tag: "Knowledge Base",
-    title: "Train your AI voice agent with what it needs to sound smart.",
-    points: ["Upload FAQs, SOPs, docs, or notes up to 25 MB", "Use dynamic variables for personalized responses", "Update knowledge without touching flows"],
-    buttonText: "Add Knowledge", bgColor: "#F7F3E8", visual: "📂 Knowledge Docs",
+    id: 1,
+    tag: "Lead Qualification",
+    title: "Leads Qualified Before You Even Wake Up",
+    description: "Let Markeltree AI voice agents call, qualify, and score every lead automatically while your sales team focuses on closing.",
+    subDescription: "One Agent. Unlimited Pipeline. Your Markeltree agent engages every lead instantly and delivers only the hottest prospects straight to your team.",
+    points: [
+      "Calls every new lead within seconds of sign-up",
+      "Asks the right questions and scores intent automatically",
+      "Books qualified leads directly into your sales calendar"
+    ],
+    buttonText: "Start Qualifying Leads",
+    bgColor: "#F7F3E8",
+    visual: "🎯 Lead Scoring",
+    icon: "📞"
   },
   {
-    id: 2, tag: "Analytics",
-    title: "Outbound call campaigns that scale with zero stress.",
-    points: ["Launch bulk campaigns for reminders, offers, or feedback", "Set targeting rules and real-time branching flows", "Track engagement, drop-off, and conversions instantly"],
-    buttonText: "Start Campaign", bgColor: "#F2E9A1", visual: "📊 Campaign Stats",
+    id: 2,
+    tag: "Appointment Scheduling",
+    title: "Appointments Booked Around The Clock",
+    description: "Let Markeltree AI voice agents handle your entire scheduling process, confirming, reminding, and rescheduling without any human effort.",
+    subDescription: "One Agent. Zero No-Shows. Your Markeltree agent manages every booking and keeps your calendar full without lifting a finger.",
+    points: [
+      "Checks availability and books slots in real time",
+      "Sends reminders automatically before every appointment",
+      "Handles rescheduling and cancellations without any friction"
+    ],
+    buttonText: "Automate Scheduling",
+    bgColor: "#F2E9A1",
+    visual: "📅 Calendar",
+    icon: "⏰"
   },
   {
-    id: 3, tag: "Knowledge Base",
-    title: "Train your AI voice agent with what it needs to sound smart.",
-    points: ["Upload FAQs, SOPs, docs, or notes up to 25 MB", "Use dynamic variables for personalized responses", "Update knowledge without touching flows"],
-    buttonText: "Add Knowledge", bgColor: "#F7F3E8", visual: "📂 Knowledge Docs",
+    id: 3,
+    tag: "Customer Support",
+    title: "Support That Never Sleeps Or Slows Down",
+    description: "Let Markeltree AI voice agents handle every customer query, complaint, and request, delivering instant support at any hour.",
+    subDescription: "One Agent. Endless Patience. Your Markeltree agent resolves every support call confidently and escalates only when a human is truly needed.",
+    points: [
+      "Answers common queries instantly using your knowledge base",
+      "Resolves complaints and follows up with SMS or email mid-call",
+      "Escalates complex cases to your team with full context attached"
+    ],
+    buttonText: "Deploy Support Agent",
+    bgColor: "#E8F0F7",
+    visual: "💬 Live Chat",
+    icon: "🎧"
   },
   {
-    id: 4, tag: "Analytics",
-    title: "Outbound call campaigns that scale with zero stress.",
-    points: ["Launch bulk campaigns for reminders, offers, or feedback", "Set targeting rules and real-time branching flows", "Track engagement, drop-off, and conversions instantly"],
-    buttonText: "Start Campaign", bgColor: "#F2E9A1", visual: "📊 Campaign Stats",
-  },
-]
+    id: 4,
+    tag: "Inquiry Management",
+    title: "Every Inquiry Answered. Every Time.",
+    description: "At Markeltree our AI voice agents capture, respond to, and log every inbound inquiry before it becomes a missed opportunity.",
+    subDescription: "One Agent. Zero Missed Calls. Your Markeltree agent handles every inbound call and delivers the right information on the very first ring.",
+    points: [
+      "Responds to product, pricing, and availability questions instantly",
+      "Logs every inquiry and pushes data to your CRM automatically",
+      "Follows up with personalized messages after every single call"
+    ],
+    buttonText: "Capture Every Lead",
+    bgColor: "#F0F7E8",
+    visual: "📝 Lead Capture",
+    icon: "📋"
+  }
+];
 
 export default function VerticalScrollSlider() {
   const [index, setIndex] = useState(0)
@@ -75,6 +115,8 @@ export default function VerticalScrollSlider() {
                 {slide.tag}
               </span>
               <h3 className="text-lg font-black text-[#1A1A2E] mb-4 leading-tight">{slide.title}</h3>
+               <p className="mb-3">{slide.description}</p>
+                <p className="mb-6">{slide.subDescription}</p>
               {index === i && (
                 <>
                   <ul className="space-y-3 mb-6">
@@ -145,6 +187,8 @@ export default function VerticalScrollSlider() {
                   {slides[index].tag}
                 </span>
                 <h2 className="text-2xl lg:text-4xl font-black text-[#1A1A2E] mb-6 leading-[1.1]">{slides[index].title}</h2>
+                <p className="mb-3">{slides[index].description}</p>
+                <p className="mb-6">{slides[index].subDescription}</p>
                 <ul className="space-y-3 mb-8">
                   {slides[index].points.map((point, i) => (
                     <li key={i} className="flex items-start gap-4 text-[#1A1A2E] font-semibold text-sm">

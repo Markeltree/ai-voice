@@ -1,6 +1,6 @@
 import { useState, useRef } from "react";
-import agents1 from "../assets/images/Clara.png"
-import agents2 from "../assets/images/Jenny.png"
+import agents1 from "../assets/images/girl-1.png"
+import agents2 from "../assets/images/girl-2.png"
 import agents3 from "../assets/images/sam.png"
 import agents4 from "../assets/images/Jordan.png"
 import aivoice from "../assets/images/ai-voice.svg"
@@ -11,32 +11,32 @@ import women2 from "../assets/audio/women2.mp3"
 
 const agents = [
   {
-    id: "clara", name: "Clara", img: agents1,
+    id: "clara", name: "Elizabeth", img: agents1,
     audio: women1,
     type: "Medical", title: "Dental clinic",
     desc: "Listen how our AI Voice Agent politely reminds a client about their upcoming dental appointment.",
-    bgColor: "#A594F9",
+    bgColor: "#EBEDFF",
   },
   {
-    id: "jenny", name: "Jenny", img: agents2,
+    id: "jenny", name: "Sophia", img: agents2,
     audio: women2,
     type: "Real Estate", title: "Agentic Estate",
     desc: "Discover in this recording how AI instantly provides comprehensive property details, simplifying your client's real estate search.",
-    bgColor: "#F99494",
+    bgColor: "#EBEDFF",
   },
   {
-    id: "sam", name: "Sam", img: agents3,
+    id: "sam", name: "Daniel", img: agents3,
     audio: men1,
     type: "Markeltree AI", title: "Demo Agent",
     desc: "Listen how our AI Voice Agent explains our service to a potential customer.",
-    bgColor: "#FFB347",
+    bgColor: "#EBEDFF",
   },
   {
-    id: "jordan", name: "Jordan", img: agents4,
+    id: "jordan", name: "Andrew", img: agents4,
     audio: men2,
     type: "eCandleshop", title: "e-Commerce",
     desc: "Listen how our AI Voice Agent handles a refund request from an angry customer.",
-    bgColor: "#B2EBF2",
+    bgColor: "#EBEDFF",
   },
 ]
 
@@ -69,16 +69,15 @@ export default function VoiceAgentsSection() {
         </span>
       </div>
       <h2 className="agent-heading text-[36px] md:text-[54px] font-black text-[#1A1A2E] leading-tight">
-        Deploy AI voice agents that sound human and work 24/7
+        Elevate Customer Experience With AI Voice Agent Development
       </h2>
       <p className="text-gray-500 max-w-2xl mx-auto text-[20px] md:text-[25px] mt-6">
-        Deliver spectacular customer experience with round-the-clock
-        human-like interactions, 400+ AI voices and in 40 global languages.
+        Handle high call volumes effortlessly while delivering personalized, real-time responses around the clock.
       </p>
     </div>
 
     <div className="flex items-center justify-start gap-3 mb-10 text-gray-400 font-bold text-[22px]">
-      <span className="text-2xl">🎧</span> 400+ Neural Voices For Lifelike Voice Agents
+      <span className="text-2xl">🎙️</span> Voice agent case studies will appear here
     </div>
 
     {/* Mobile: all cards fully expanded, image-left content-right */}
@@ -196,13 +195,13 @@ export default function VoiceAgentsSection() {
             Elevenlabs
           </h4>
           <p className="text-gray-400 text-[18px] md:text-[20px] leading-relaxed mb-8">
-            Create voices & accents or clone your own voice with our ElevenLabs 1 click Integration.
+            Upload 30 seconds of audio and launch a cloned voice agent that sounds indistinguishable from the real you.
           </p>
         </div>
         
-        <button className="bg-[#5243e8] text-white px-10 py-4 rounded-2xl flex items-center justify-center gap-3 hover:bg-[#4338CA] transition-all w-full md:w-auto font-bold text-lg shadow-md">
+        <button className="bg-[#93D169] text-black px-10 py-4 rounded-2xl flex items-center justify-center gap-3 transition-all w-full md:w-auto font-bold text-lg shadow-md">
           <span className="text-2xl">🎙️</span>
-          <a href="/#call" className="no-underline text-white">Try a conversation</a>
+          <a href="/#call" className="no-underline text-black">Try a conversation</a>
         </button>
       </div>
 

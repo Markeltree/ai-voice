@@ -17,7 +17,6 @@ export default function App() {
       <Header />
       <HeroSection />
       <StatsSection />
-      <UseCasesSection />
       <AgentBuilderSection />
       <IntegrationsSection />
       <UseCaseSlider/>

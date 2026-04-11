@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import phoneBanner from "../assets/phone-banner.png";
-import arrowIcon from "../assets/banner-free-demo-icon.svg";
 import flagIcon from "../assets/images/flags.png";
 import avatarIcon from "../assets/images/testi10.png";
 
@@ -148,9 +147,9 @@ export default function HeroSection() {
     <section className="relative overflow-hidden bg-white">
       <div className="hero-glow pointer-events-none absolute inset-0" />
 
-      <div className="section-wrap flex flex-col items-center pt-12 pb-0">
+      <div className="section-wrap flex flex-col items-center pt-8 pb-0">
         <div className="hero-pill inline-flex items-center rounded-full border border-gray-200 bg-gray-50 px-5 py-2 mb-8">
-          AI Can Now Make &amp; Take Calls On Your Behalf!
+          Your 24/7 AI Calling Agent Is Now Ready
         </div>
 
         <div className="relative flex flex-col items-center">
@@ -161,7 +160,7 @@ export default function HeroSection() {
             Human-Like
           </span>
           <h1 className="hero-heading">
-            Next-Gen AI Voice Agents For Businesses and Agencies
+            AI Can Now Make & Take Calls On Your Behalf
           </h1>
         </div>
 
@@ -175,8 +174,7 @@ export default function HeroSection() {
         </div>
 
         <p className="hero-subtitle">
-          Create artificial intelligence powered, human-like voice agents ready
-          to handle inbound and outbound calls 24/7
+          Businesses and agencies can benefit from AI development services that create next-generation virtual voice agents. The system enables organizations to implement voice agents that handle inbound and outbound calls throughout the day without requiring any programming and without experiencing exhaustion or dropping calls.
         </p>
 
         <div className="flex flex-col sm:flex-row items-center gap-3">
@@ -196,20 +194,12 @@ export default function HeroSection() {
               speaker
             </div>
             <div className="hero-float-badge-item">
-              Trained on Markeltree FAQs
+             Live Agent Trained on Your Products
             </div>
           </div>
 
           <PhoneMockup />
 
-          <div className="hero-annotation hidden sm:block">
-            <p className="hero-annotation-text">
-              Try a FREE
-              <br />
-              demo call!
-            </p>
-            <img src={arrowIcon} alt="" className="hero-annotation-arrow" />
-          </div>
         </div>
       </div>
     </section>
