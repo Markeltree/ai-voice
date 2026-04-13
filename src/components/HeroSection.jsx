@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import phoneBanner from "../assets/phone-banner.png";
 import flagIcon from "../assets/images/flags.png";
-import avatarIcon from "../assets/images/testi10.png";
+import avatarIcon from "../assets/images/Daniel.png";
 
 const MicIcon = ({ size = 16 }) => (
   <svg
@@ -90,7 +90,7 @@ const PhoneMockup = () => {
             />
           </div>
           <div className="flex flex-col justify-center">
-            <p className="phone-avatar-name">Nick from Markeltree</p>
+            <p className="phone-avatar-name">Daniel from Markeltree</p>
             <p className="phone-avatar-status">Available</p>
           </div>
         </div>
@@ -153,10 +153,10 @@ export default function HeroSection() {
         </div>
 
         <div className="relative flex flex-col items-center">
-          <span className="hero-badge-yellow hidden md:inline-block   text-gray-900 rounded-full">
+          <span className="hero-badge-yellow hidden md:inline-block text-gray-900 rounded-full">
             Inbound &amp; Outbound Calls
           </span>
-          <span className="hero-badge-purple hidden md:inline-block   text-white rounded-full">
+          <span className="hero-badge-purple hidden md:inline-block text-white rounded-full">
             Human-Like
           </span>
           <h1 className="hero-heading">
@@ -164,14 +164,6 @@ export default function HeroSection() {
           </h1>
         </div>
 
-        <div className="flex flex-wrap justify-center gap-2 mt-4 md:hidden">
-          <span className="bg-yellow-400 text-gray-900   text-xs rounded-full px-4 py-1.5">
-            Inbound &amp; Outbound Calls
-          </span>
-          <span className="  text-white text-xs rounded-full px-4 py-1.5 bg-indigo-600">
-            Human-Like
-          </span>
-        </div>
 
         <p className="hero-subtitle">
           Businesses and agencies can benefit from AI development services that create next-generation virtual voice agents. The system enables organizations to implement voice agents that handle inbound and outbound calls throughout the day without requiring any programming and without experiencing exhaustion or dropping calls.
@@ -184,7 +176,7 @@ export default function HeroSection() {
             rel="noopener noreferrer"
             className="btn-outline inline-flex items-center gap-2"
           >
-            <MicIcon size={15} /> Try a conversation
+            <MicIcon size={15} /> Contact Sales
           </a>
         </div>
         <div className="hero-phone-area" id="call">
@@ -197,9 +189,7 @@ export default function HeroSection() {
              Live Agent Trained on Your Products
             </div>
           </div>
-
           <PhoneMockup />
-
         </div>
       </div>
     </section>

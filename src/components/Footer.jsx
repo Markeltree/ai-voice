@@ -2,7 +2,7 @@ import whiteLogo from "../assets/images/white-logo.png";
 
 export default function Footer() {
   return (
-    <footer className="bg-[#0F0B1E] text-white">
+    <footer className="bg-[#2D2B3D] text-white">
       <div className="section-wrap">
 
         {/* Top */}
@@ -11,7 +11,7 @@ export default function Footer() {
           {/* Brand */}
           <div className="max-w-sm">
             <img src={whiteLogo} alt="Markeltree" className="h-9 mb-5" />
-            <p className="text-[#9090A8] text-lg leading-relaxed">
+            <p className="text-white text-lg leading-relaxed">
               Your business never sleeps again. Next-generation AI voice agents that make and take calls on full autopilot, day, night, weekends, always.
             </p>
           </div>
@@ -20,7 +20,7 @@ export default function Footer() {
         </div>
 
         {/* Bottom */}
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 py-7 text-[#6B6B85] text-lg">
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 py-7 text-white text-lg">
           <p>© {new Date().getFullYear()} Markeltree. All rights reserved.</p>
           <div className="flex items-center gap-2">
             <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />

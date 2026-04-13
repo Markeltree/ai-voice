@@ -127,7 +127,7 @@ export default function VerticalScrollSlider() {
                       </li>
                     ))}
                   </ul>
-                  <button className="bg-black text-white px-6 py-3 rounded-2xl   text-sm">
+                  <button className="bg-[#93D169] text-black px-6 py-3 rounded-2xl   text-sm">
                     {slide.buttonText}
                   </button>
                 </>
@@ -174,7 +174,7 @@ export default function VerticalScrollSlider() {
           </motion.div>
 
           {/* Right: content */}
-          <div className="w-1/2 h-full bg-white flex flex-col justify-center p-10 lg:p-16">
+          <div className="w-1/2 h-full bg-white flex flex-col justify-center p-6 md:p-7 lg:p-10 xl:p-16">
             <AnimatePresence mode="wait">
               <motion.div
                 key={index}
@@ -183,21 +183,21 @@ export default function VerticalScrollSlider() {
                 exit={{ x: -40, opacity: 0 }}
                 transition={{ duration: 0.5, ease: "circOut" }}
               >
-                <span className="inline-block px-4 py-1.5 rounded-full bg-pink-100 text-pink-600 text-[10px] font-black uppercase tracking-widest mb-5">
+                <span className="inline-block px-3 py-1 rounded-full bg-[#93D169] text-black text-[9px] md:text-[9px] lg:text-[10px] font-black uppercase tracking-widest mb-2 md:mb-2 lg:mb-4">
                   {slides[index].tag}
                 </span>
-                <h2 className="text-2xl lg:text-4xl font-black text-[#1A1A2E] mb-6 leading-[1.1]">{slides[index].title}</h2>
-                <p className="mb-3">{slides[index].description}</p>
-                <p className="mb-6">{slides[index].subDescription}</p>
-                <ul className="space-y-3 mb-8">
+                <h2 className="text-lg md:text-xl lg:text-3xl xl:text-4xl font-black text-[#1A1A2E] mb-2 md:mb-2 lg:mb-4 leading-[1.1]">{slides[index].title}</h2>
+                <p className="text-[11px] md:text-[11px] lg:text-sm text-[#6B7280] leading-relaxed mb-1.5 md:mb-1.5 lg:mb-3">{slides[index].description}</p>
+                <p className="hidden lg:block text-sm text-[#6B7280] leading-relaxed mb-4 xl:mb-6">{slides[index].subDescription}</p>
+                <ul className="space-y-1.5 md:space-y-1.5 lg:space-y-3 mb-3 md:mb-3 lg:mb-6">
                   {slides[index].points.map((point, i) => (
-                    <li key={i} className="flex items-start gap-4 text-[#1A1A2E] font-semibold text-sm">
-                      <span className="mt-0.5 w-5 h-5 rounded-full bg-black flex items-center justify-center text-white text-[10px] flex-shrink-0">✓</span>
+                    <li key={i} className="flex items-start gap-2 md:gap-2 lg:gap-4 text-[#1A1A2E] font-semibold text-[11px] md:text-[11px] lg:text-sm">
+                      <span className="mt-0.5 w-4 h-4 md:w-4 md:h-4 lg:w-5 lg:h-5 rounded-full bg-[#93D169] flex items-center justify-center text-black text-[9px] flex-shrink-0">✓</span>
                       {point}
                     </li>
                   ))}
                 </ul>
-                <button className="bg-black text-white px-8 py-3 rounded-2xl   hover:bg-gray-800 active:scale-95 shadow-lg shadow-gray-200 transition-all">
+                <button className="bg-[#93D169] text-black px-5 py-2 md:px-5 md:py-2 lg:px-8 lg:py-3 text-xs md:text-xs lg:text-sm rounded-2xl transition-all">
                   {slides[index].buttonText}
                 </button>
               </motion.div>

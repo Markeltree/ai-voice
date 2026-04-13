@@ -132,7 +132,7 @@ const ContactSection = () => {
                       value={formData.name}
                       onChange={handleChange}
                       placeholder="John Doe"
-                      className="w-full px-5 py-4 bg-[#F9FAFF] border border-gray-100 rounded-2xl outline-none focus:border-[#5831D8] transition-colors text-[15px]"
+                      className="w-full px-5 py-4 bg-[#F9FAFF] border border-gray-100 rounded-2xl outline-none focus:border-[#93D169] transition-colors text-[15px]"
                     />
                   </div>
 
@@ -151,7 +151,7 @@ const ContactSection = () => {
                       value={formData.email}
                       onChange={handleChange}
                       placeholder="john@example.com"
-                      className="w-full px-5 py-4 bg-[#F9FAFF] border border-gray-100 rounded-2xl outline-none focus:border-[#5831D8] transition-colors text-[15px]"
+                      className="w-full px-5 py-4 bg-[#F9FAFF] border border-gray-100 rounded-2xl outline-none focus:border-[#93D169] transition-colors text-[15px]"
                     />
                   </div>
 
@@ -170,7 +170,7 @@ const ContactSection = () => {
                       value={formData.phone}
                       onChange={handleChange}
                       placeholder="+1 234 567 8900"
-                      className="w-full px-5 py-4 bg-[#F9FAFF] border border-gray-100 rounded-2xl outline-none focus:border-[#5831D8] transition-colors text-[15px]"
+                      className="w-full px-5 py-4 bg-[#F9FAFF] border border-gray-100 rounded-2xl outline-none focus:border-[#93D169] transition-colors text-[15px]"
                     />
                   </div>
 
@@ -184,13 +184,13 @@ const ContactSection = () => {
                     </p>
                     <div
                       onClick={() => fileRef.current.click()}
-                      className="w-full px-5 py-4 bg-[#F9FAFF] border border-dashed border-gray-300 rounded-2xl cursor-pointer flex items-center gap-3 hover:border-[#5831D8] transition-colors"
+                      className="w-full px-5 py-4 bg-[#F9FAFF] border border-dashed border-black rounded-2xl cursor-pointer flex items-center gap-3 hover:border-[#93D169] transition-colors"
                     >
                       <svg
                         width="18"
                         height="18"
                         fill="none"
-                        stroke="#5831D8"
+                        stroke="#93D169"
                         viewBox="0 0 24 24"
                       >
                         <path
@@ -228,7 +228,7 @@ const ContactSection = () => {
                     value={formData.message}
                     onChange={handleChange}
                     placeholder="Describe what you need..."
-                    className="w-full px-5 py-4 bg-[#F9FAFF] border border-gray-100 rounded-2xl outline-none resize-none focus:border-[#5831D8] transition-colors text-[15px]"
+                    className="w-full px-5 py-4 bg-[#F9FAFF] border border-gray-100 rounded-2xl outline-none resize-none focus:border-[#93D169] transition-colors text-[15px]"
                   />
                 </div>
 
@@ -242,7 +242,7 @@ const ContactSection = () => {
                   <button
                     type="submit"
                     disabled={loading}
-                    className="bg-[#5831D8] text-white px-10 py-4 rounded-2xl font-semibold text-[15px] hover:bg-[#4626B0] transition-all shadow-lg shadow-purple-200 disabled:opacity-70"
+                    className="bg-[#93D169] text-black px-10 py-4 rounded-2xl font-semibold text-[15px]"
                   >
                     {loading ? "Sending…" : "Send Message"}
                   </button>
@@ -255,7 +255,7 @@ const ContactSection = () => {
                     width="36"
                     height="36"
                     fill="none"
-                    stroke="#5831D8"
+                    stroke="#93D169"
                     viewBox="0 0 24 24"
                   >
                     <path
@@ -280,7 +280,7 @@ const ContactSection = () => {
                     setFile(null);
                     window.history.pushState({}, "", window.location.pathname.replace("/thank-you", "") || "/");
                   }}
-                  className="text-[#5831D8] text-sm font-semibold underline"
+                  className="text-[#93D169] text-sm font-semibold underline"
                 >
                   Send another message
                 </button>
