@@ -35,32 +35,18 @@ export default function CtaSection() {
   return (
     <section className="overflow-hidden">
         <div className="relative rounded-[2.5rem] overflow-hidden flex items-center"
-          style={{ background: 'linear-gradient(135deg, #1A1832 0%, #2D2B3D 50%, #3A3750 100%)', minHeight: '540px' }}>
+          style={{ background: '#2D2B3D', minHeight: '540px' }}>
 
           {/* — noise texture — */}
           <div className="absolute inset-0 opacity-[0.03]"
             style={{ backgroundImage: "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E\")", backgroundRepeat: 'repeat', backgroundSize: '128px' }}
           />
 
-          {/* — green glow top-right — */}
-          <div className="absolute -top-40 -right-20 w-[480px] h-[480px] rounded-full pointer-events-none"
-            style={{ background: 'radial-gradient(circle, rgba(147,209,105,0.18) 0%, transparent 70%)' }} />
-
-          {/* — indigo glow bottom-left — */}
-          <div className="absolute -bottom-32 -left-20 w-[400px] h-[400px] rounded-full pointer-events-none"
-            style={{ background: 'radial-gradient(circle, rgba(99,102,241,0.15) 0%, transparent 70%)' }} />
-
           {/* ═══ MAIN CONTENT ═══ */}
           <div className="relative z-10 w-full flex flex-col lg:flex-row justify-between items-center gap-12 px-8 sm:px-12 md:px-16 py-14">
 
             {/* ── LEFT ── */}
             <div className="flex-1 max-w-2xl text-center lg:text-left">
-
-              {/* pill */}
-              <span className="inline-flex items-center gap-2 rounded-full border border-[#93D169]/30 bg-[#93D169]/10 text-[#93D169] px-4 py-1.5 text-xs sm:text-sm font-semibold mb-6">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#93D169] animate-pulse" />
-                Built on OpenAI · ElevenLabs · Twilio
-              </span>
 
               <h2 className="text-white font-black leading-[1.08] mb-5"
                 style={{ fontSize: 'clamp(1.9rem, 4.5vw, 3.4rem)' }}>

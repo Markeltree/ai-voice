@@ -83,8 +83,7 @@ export default function CtaSection2() {
                 <span style={{ color: '#93D169' }}>Fraction of the Cost.</span>
               </h2>
 
-              <p className="text-[#0F0B1E]/55 leading-relaxed mb-8 max-w-lg mx-auto lg:mx-0"
-                style={{ fontSize: 'clamp(0.9rem, 1.7vw, 1.15rem)' }}>
+              <p className="text-[#0F0B1E]/55 leading-relaxed mb-8 max-w-lg mx-auto lg:mx-0">
                   Connect in minutes. Answers are called instantly. Book appointments automatically. You just check your calendar.
               </p>
 

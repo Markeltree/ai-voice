@@ -49,7 +49,7 @@ export default function FAQ() {
           <h2 className="faq-heading mb-6">
             Are You Ready to Roll Out Your AI Voice Agent?
           </h2>
-          <p className="text-slate-500 text-lg max-w-3xl mx-auto">
+          <p className="text-slate-500 max-w-3xl mx-auto">
             Please give us the details of your business, and we will respond to
             you within one business day with regards to the development of our
             AI voice agent. A single agent or a fully automated call center, we

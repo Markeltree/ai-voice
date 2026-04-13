@@ -1,4 +1,5 @@
 import { useState, useRef } from "react";
+import thankVoice from '../assets/audio/thank-you-voice.mp3'
 
 const SHEET_URL =
   "https://script.google.com/macros/s/AKfycbx1qvvq0NPzNsnKJ7CT1ZK4Pazfahx3H4lPZNyjWE7yovCtm2TNmMrfxEK0JBTuFHiq/exec";
@@ -15,6 +16,7 @@ const ContactSection = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
   const fileRef = useRef();
+  const audioRef = useRef(null); // Add audio reference
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -28,6 +30,15 @@ const ContactSection = () => {
       reader.onload = () => resolve(reader.result);
       reader.onerror = (error) => reject(error);
     });
+  };
+
+  // Function to play thank you voice
+  const playThankYouVoice = () => {
+    if (audioRef.current) {
+      audioRef.current.play().catch(error => {
+        console.log("Audio playback failed:", error);
+      });
+    }
   };
 
   const handleSubmit = async (e) => {
@@ -73,6 +84,9 @@ const ContactSection = () => {
       // With mode: "no-cors", we can't read the response
       // So we assume success if no network error
       setSubmitted(true);
+      
+      // Play the thank you voice
+      playThankYouVoice();
 
       // Update URL with thank-you + query params
       const params = new URLSearchParams({
@@ -91,6 +105,8 @@ const ContactSection = () => {
       setError(true);
       // Still show success to user but log error
       setSubmitted(true);
+      // Play voice even on error case if you want
+      playThankYouVoice();
     } finally {
       setLoading(false);
     }
@@ -98,14 +114,17 @@ const ContactSection = () => {
 
   return (
     <section className="bg-[#F4F7FF]">
+      {/* Hidden audio element */}
+      <audio ref={audioRef} src={thankVoice} preload="auto" />
+      
       <div className="section-wrap">
         <div className="flex flex-col lg:flex-row items-start justify-between gap-10 mb-12">
           <div className="max-w-xl">
-            <h2 className="stats-heading">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[60px] !leading-[1] font-semibold text-[#1A1A2E] mb-4">
               Your Agent Starts {" "}
               <span className="relative inline-block">
                 Here
-                <span className="stats-nocode-badge">No-code</span>
+                <span className="stats-nocode-badges">No-code</span>
               </span>
             </h2>
             <p className="stats-subtitle">
@@ -270,7 +289,7 @@ const ContactSection = () => {
                   Message Sent!
                 </h3>
                 <p className="text-gray-400 text-[15px]">
-                  We'll get back to you as soon as possible.
+                  Thank you for getting in touch with us, we will get back to you quicker than you can say AI automation
                 </p>
                 <button
                   onClick={() => {

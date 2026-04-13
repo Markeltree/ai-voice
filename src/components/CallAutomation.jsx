@@ -36,7 +36,7 @@ export default function CallAutomation() {
             <h2 className="text-[36px] sm:text-[48px] md:text-[60px] font-[600] text-slate-900 leading-tight">
              Powerful AI Voice Agent Solutions
             </h2>
-            <p className="text-[18px] sm:text-[24px] md:text-[30px] font-[200] mt-2 uppercase tracking-wider">
+            <p className="mt-2 uppercase tracking-wider">
               Built for Growth
             </p>
           </div>

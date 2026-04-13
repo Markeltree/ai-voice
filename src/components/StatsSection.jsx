@@ -38,13 +38,16 @@ export default function StatsSection() {
 
         <div className="flex flex-col lg:flex-row items-start justify-between gap-10 mb-12">
           <div className="max-w-xl">
-            <h2 className="stats-heading">
-              Replace Call Centers with Smart AI Voice {' '}
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[60px] !leading-[1] font-semibold text-[#1A1A2E] mb-4">
+               Replace Call Centers with Smart AI Voice {' '}
               <span className="relative inline-block">
                 Agents
                 <span className="stats-nocode-badge">No-code</span>
               </span>
             </h2>
+            {/* <h2 className="stats-heading">
+             
+            </h2> */}
             <p className="stats-subtitle">
               Build the perfect AI employee to handle sales, bookings, surveys, and all your customer support with no code or skills.
             </p>

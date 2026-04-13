@@ -129,7 +129,7 @@ const PhoneMockup = () => {
               rel="noopener noreferrer"
               className="phone-call-btn inline-flex items-center justify-center"
             >
-              Call Me Now
+              Call Now
             </a>
             <p className="text-gray-400 font-medium italic text-sm">or</p>
             <a href="tel:13105454756" className="inline-flex items-center gap-2 text-gray-800 text-lg">

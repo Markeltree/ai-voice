@@ -23,6 +23,11 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+p {
+  font-weight: 400;
+  font-size: 20px;
+}
+
 input:focus {
   outline: none;
   box-shadow: 0 0 0 2px rgba(79, 70, 229, 0.25);
@@ -374,9 +379,24 @@ input:focus {
   font-size: 15px;
   padding: 4px 14px;
   top: -6px;
-  left: calc(100% + 8px);
+  left: calc(100% + 38px);
   white-space: nowrap;
-  transform: rotate(-8deg);
+  transform: rotate(-25deg);
+  border-radius: 9999px;
+  font-weight: 700;
+  color: #000000;
+  position: absolute;
+}
+
+.stats-nocode-badges {
+  background: #93D169;
+  box-shadow: 0 4px 16px #93d16986;
+  font-size: 20px;
+  padding: 4px 14px;
+  top: -6px;
+  left: calc(100% + 300px);
+  white-space: nowrap;
+  transform: rotate(-25deg);
   border-radius: 9999px;
   font-weight: 700;
   color: #000000;
@@ -385,8 +405,8 @@ input:focus {
 
 .stats-subtitle {
   color: #6B7280;
-  font-size: 15px;
-  max-width: 420px;
+  font-size: 20px;
+  max-width: 450px;
   margin-top: 1rem;
   line-height: 1.6;
 }
@@ -742,6 +762,11 @@ input:focus {
     padding: 3px 10px;
   }
 
+  .stats-nocode-badges {
+    font-size: 13px;
+    padding: 3px 10px;
+  }
+
   .stats-card {
     min-height: 300px;
     padding: 32px 24px;
@@ -877,6 +902,11 @@ input:focus {
     padding: 3px 9px;
   }
 
+  .stats-nocode-badges {
+    font-size: 12px;
+    padding: 3px 9px;
+  }
+
   /* Agent Builder — hidden at 768px; tablet grid handles layout in JSX */
 
   /* Integrations */
@@ -1003,6 +1033,10 @@ input:focus {
   }
 
   .stats-nocode-badge {
+    display: none;
+  }
+
+  .stats-nocode-badges {
     display: none;
   }
 

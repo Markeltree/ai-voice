@@ -11,7 +11,7 @@ import CtaSection from "./CtaSection";
 
 const agents = [
   {
-    id: "clara",
+    id: "1",
     name: "Elizabeth",
     img: agents1,
     audio: women1,
@@ -21,7 +21,7 @@ const agents = [
     bgColor: "#EBEDFF",
   },
   {
-    id: "jenny",
+    id: "2",
     name: "Sophia",
     img: agents2,
     audio: women2,
@@ -31,17 +31,17 @@ const agents = [
     bgColor: "#EBEDFF",
   },
   {
-    id: "sam",
+    id: "3",
     name: "Daniel",
     img: agents3,
     audio: men1,
-    type: "Markeltree AI",
-    title: "Demo Agent",
-    desc: "Listen how our AI Voice Agent explains Markeltree's services, answers pricing questions, books demos, and helps potential customers understand AI voice automation.",
+    type: "Education",
+    title: "Study Coach",
+    desc: "Listen how our AI Voice Agent answers course questions, schedules counseling sessions, processes enrollment inquiries, and provides information about programs and deadlines.",
     bgColor: "#EBEDFF",
   },
   {
-    id: "jordan",
+    id: "4",
     name: "Andrew",
     img: agents4,
     audio: men2,
@@ -81,10 +81,11 @@ export default function VoiceAgentsSection() {
               in 40+ languages
             </span>
           </div>
-          <h2 className="agent-heading text-[36px] md:text-[54px] font-black text-[#1A1A2E] leading-tight">
+          <h2 className="agent-heading text-2xl sm:text-3xl md:text-4xl lg:text-[60px] !leading-[1] font-semibold text-[#1A1A2E] mb-4">
             Elevate Customer Experience With AI Voice Agent Development
           </h2>
-          <p className="text-gray-500 max-w-2xl mx-auto text-[20px] md:text-[25px] mt-6">
+          
+          <p className="text-gray-500 max-w-2xl mx-auto mt-6">
             Handle high call volumes effortlessly while delivering personalized,
             real-time responses around the clock.
           </p>
