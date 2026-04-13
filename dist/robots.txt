@@ -1,0 +1,10 @@
+# Robots.txt — Markeltree AI Voice Agent
+# Learn more: https://www.robotstxt.org/
+
+Host: https://voiceagent.markeltree.com/
+
+User-agent: *
+Disallow: /admin/
+Disallow: /private/
+
+Sitemap: https://voiceagent.markeltree.com/sitemap.xml
