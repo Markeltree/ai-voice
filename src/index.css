@@ -287,7 +287,6 @@ input:focus {
 .phone-avatar-name {
   font-weight: 700;
   color: #1F2937;
-  min-width: 300px;
   font-size: clamp(11px, 1.2vw, 25px);
   margin-bottom: 2px;
 }

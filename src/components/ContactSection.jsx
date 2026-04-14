@@ -140,10 +140,10 @@ const ContactSection = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                   {/* Name */}
                   <div className="space-y-2">
-                    <label className="block font-semibold text-[15px] text-[#1A1A2E]">
+                    <label className="block font-semibold text-[20px] text-[#1A1A2E]">
                       Name*
                     </label>
-                    <p className="text-gray-400 text-[13px]">Your full name</p>
+                    <p className="text-gray-400 text-[15px]">Your full name</p>
                     <input
                       type="text"
                       name="name"
@@ -151,16 +151,16 @@ const ContactSection = () => {
                       value={formData.name}
                       onChange={handleChange}
                       placeholder="John Doe"
-                      className="w-full px-5 py-4 bg-[#F9FAFF] border border-gray-100 rounded-2xl outline-none focus:border-[#93D169] transition-colors text-[15px]"
+                      className="w-full px-8 py-7 bg-[#F9FAFF] border border-gray-100 rounded-2xl outline-none focus:border-[#93D169] transition-colors text-[15px]"
                     />
                   </div>
 
                   {/* Email */}
                   <div className="space-y-2">
-                    <label className="block font-semibold text-[15px] text-[#1A1A2E]">
+                    <label className="block font-semibold text-[20px] text-[#1A1A2E]">
                       Email*
                     </label>
-                    <p className="text-gray-400 text-[13px]">
+                    <p className="text-gray-400 text-[15px]">
                       We'll reply to this address
                     </p>
                     <input
@@ -170,16 +170,16 @@ const ContactSection = () => {
                       value={formData.email}
                       onChange={handleChange}
                       placeholder="john@example.com"
-                      className="w-full px-5 py-4 bg-[#F9FAFF] border border-gray-100 rounded-2xl outline-none focus:border-[#93D169] transition-colors text-[15px]"
+                      className="w-full px-8 py-7 bg-[#F9FAFF] border border-gray-100 rounded-2xl outline-none focus:border-[#93D169] transition-colors text-[15px]"
                     />
                   </div>
 
                   {/* Phone */}
                   <div className="space-y-2">
-                    <label className="block font-semibold text-[15px] text-[#1A1A2E]">
+                    <label className="block font-semibold text-[20px] text-[#1A1A2E]">
                       Phone number*
                     </label>
-                    <p className="text-gray-400 text-[13px]">
+                    <p className="text-gray-400 text-[15px]">
                       Your contact number
                     </p>
                     <input
@@ -189,21 +189,21 @@ const ContactSection = () => {
                       value={formData.phone}
                       onChange={handleChange}
                       placeholder="+1 234 567 8900"
-                      className="w-full px-5 py-4 bg-[#F9FAFF] border border-gray-100 rounded-2xl outline-none focus:border-[#93D169] transition-colors text-[15px]"
+                      className="w-full px-8 py-7 bg-[#F9FAFF] border border-gray-100 rounded-2xl outline-none focus:border-[#93D169] transition-colors text-[15px]"
                     />
                   </div>
 
                   {/* File */}
                   <div className="space-y-2">
-                    <label className="block font-semibold text-[15px] text-[#1A1A2E]">
+                    <label className="block font-semibold text-[20px] text-[#1A1A2E]">
                       File
                     </label>
-                    <p className="text-gray-400 text-[13px]">
+                    <p className="text-gray-400 text-[15px]">
                       Attach any relevant document
                     </p>
                     <div
                       onClick={() => fileRef.current.click()}
-                      className="w-full px-5 py-4 bg-[#F9FAFF] border border-dashed border-black rounded-2xl cursor-pointer flex items-center gap-3 hover:border-[#93D169] transition-colors"
+                      className="w-full px-8 py-7 bg-[#F9FAFF] border border-dashed border-black rounded-2xl cursor-pointer flex items-center gap-3 hover:border-[#93D169] transition-colors"
                     >
                       <svg
                         width="18"
@@ -234,10 +234,10 @@ const ContactSection = () => {
 
                 {/* Message */}
                 <div className="space-y-2">
-                  <label className="block font-semibold text-[15px] text-[#1A1A2E]">
+                  <label className="block font-semibold text-[20px] text-[#1A1A2E]">
                     Message*
                   </label>
-                  <p className="text-gray-400 text-[13px]">
+                  <p className="text-gray-400 text-[15px]">
                     Tell us about your requirements
                   </p>
                   <textarea
@@ -247,7 +247,7 @@ const ContactSection = () => {
                     value={formData.message}
                     onChange={handleChange}
                     placeholder="Describe what you need..."
-                    className="w-full px-5 py-4 bg-[#F9FAFF] border border-gray-100 rounded-2xl outline-none resize-none focus:border-[#93D169] transition-colors text-[15px]"
+                    className="w-full px-8 py-7 bg-[#F9FAFF] border border-gray-100 rounded-2xl outline-none resize-none focus:border-[#93D169] transition-colors text-[15px]"
                   />
                 </div>
 
@@ -261,7 +261,7 @@ const ContactSection = () => {
                   <button
                     type="submit"
                     disabled={loading}
-                    className="bg-[#93D169] text-black px-10 py-4 rounded-2xl font-semibold text-[15px]"
+                    className="bg-[#93D169] text-black px-12 py-6 rounded-2xl font-semibold text-[15px]"
                   >
                     {loading ? "Sending…" : "Send Message"}
                   </button>
