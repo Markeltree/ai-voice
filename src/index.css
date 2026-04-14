@@ -3,6 +3,25 @@
 @tailwind utilities;
 
 /* ─────────────────────────────────────────────
+   CUSTOM FONTS
+───────────────────────────────────────────── */
+@font-face {
+  font-family: 'AronGrotesque';
+  src: url('/fonts/aron_grotesque_regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'AronGrotesque';
+  src: url('/fonts/aron_grotesque_bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ─────────────────────────────────────────────
    RESET
 ───────────────────────────────────────────── */
 * {
@@ -13,10 +32,11 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 100px;
 }
 
 body {
-  font-family: 'Mulish', sans-serif;
+  font-family: 'AronGrotesque';
   background-color: #ffffff;
   color: #24242D;
   -webkit-font-smoothing: antialiased;
@@ -57,7 +77,7 @@ input:focus {
   width: 1440px;
   max-width: 100%;
   margin: 0 auto;
-  padding: 80px 0;
+  padding: 50px 0;
 }
 
 .section-wrap-2 {
@@ -70,10 +90,9 @@ input:focus {
    HERO
 ───────────────────────────────────────────── */
 .main-logo {
-  max-width: 110px;
+  max-width: 250px;
   width: 100%;
   height: auto;
-  padding: 15px;
 }
 
 .hero-glow {
@@ -81,17 +100,17 @@ input:focus {
 }
 
 .hero-pill {
-  font-size: clamp(12px, 1.2vw, 18px);
-  color: #444;
+  font-size: 20px;
+  color: #24242D;
 }
 
 .hero-heading {
-  font-size: 64px;
-  line-height: 1;
-  max-width: 930px;
+  font-size: 100px;
+  line-height: 80px;
+  max-width: 1300px;
   font-weight: 700;
   text-align: center;
-  color: #111827;
+  color: #24242D;
   letter-spacing: -0.02em;
 }
 
@@ -101,9 +120,9 @@ input:focus {
   padding: 9px 20px;
   font-size: clamp(12px, 1.2vw, 18px);
   position: absolute;
-  left: -140px;
+  left: 0px;
   top: 130px;
-  transform: rotate(8deg);
+  transform: rotate(15deg);
   z-index: 10;
   border-radius: 9999px;
   font-weight: 700;
@@ -117,9 +136,9 @@ input:focus {
   padding: 9px 22px;
   font-size: clamp(12px, 1.2vw, 18px);
   position: absolute;
-  right: -60px;
+  right: 0px;
   top: 45px;
-  transform: rotate(-10deg);
+  transform: rotate(-15deg);
   z-index: 10;
   border-radius: 9999px;
   font-weight: 700;
@@ -128,13 +147,13 @@ input:focus {
 }
 
 .hero-subtitle {
-  color: #555;
-  font-size: clamp(14px, 1.5vw, 20px);
-  max-width: 670px;
+  color: #24242D;
+  font-size: clamp(14px, 1.5vw, 25px);
+  max-width: 1100px;
   line-height: 1.6;
   text-align: center;
   margin-top: 1.5rem;
-  padding: 2rem 0;
+  padding: 1rem 0;
 }
 
 .btn-primary {
@@ -148,7 +167,7 @@ input:focus {
   transition: background 0.2s;
   border: none;
   cursor: pointer;
-  font-family: 'Mulish', sans-serif;
+  font-family: 'AronGrotesque';
 }
 
 .btn-primary:hover {
@@ -160,15 +179,15 @@ input:focus {
   align-items: center;
   gap: 8px;
   color: #000000;
-  font-weight: 600;
+  font-weight: 500;
   border: 1px solid #000000;
   background: #fff;
   border-radius: 20px;
-  padding: 16px 38px;
-  font-size: 14px;
+  padding: 16px 40px;
+  font-size: 20px;
   cursor: pointer;
   transition: border-color 0.2s;
-  font-family: 'Mulish', sans-serif;
+  font-family: 'AronGrotesque';
 }
 
 /* Phone area */
@@ -187,7 +206,7 @@ input:focus {
   display: flex;
   flex-direction: column;
   gap: 12px;
-  left: calc(50% - 510px);
+  left: calc(50% - 530px);
   top: 100px;
   z-index: 10;
 }
@@ -216,7 +235,6 @@ input:focus {
 }
 
 .hero-annotation-text {
-  font-family: 'Caveat', cursive;
   font-size: 20px;
   font-weight: 600;
   color: #1F2937;
@@ -233,7 +251,7 @@ input:focus {
 .phone-mockup-wrap {
   position: relative;
   width: 100%;
-  max-width: 420px;
+  max-width: 460px;
   z-index: 5;
 }
 
@@ -253,14 +271,13 @@ input:focus {
   align-items: center;
   gap: 16px;
   width: 100%;
-  padding-left: 3rem;
-  padding-right: 3rem;
+  padding-left: 2rem;
   margin-top: 3rem;
 }
 
 .phone-avatar-img {
-  width: 65px;
-  height: 65px;
+  width: 75px;
+  height: 75px;
   border-radius: 1rem;
   overflow: hidden;
   flex-shrink: 0;
@@ -270,14 +287,15 @@ input:focus {
 .phone-avatar-name {
   font-weight: 700;
   color: #1F2937;
-  font-size: clamp(11px, 1.2vw, 17px);
+  min-width: 300px;
+  font-size: clamp(11px, 1.2vw, 25px);
   margin-bottom: 2px;
 }
 
 .phone-avatar-status {
   color: #4ADE80;
   font-weight: 700;
-  font-size: clamp(10px, 1vw, 13px);
+  font-size: clamp(10px, 1vw, 20px);
 }
 
 .phone-inputs-wrap {
@@ -300,7 +318,7 @@ input:focus {
   font-size: clamp(11px, 1vw, 14px);
   outline: none;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-  font-family: 'Mulish', sans-serif;
+  font-family: 'AronGrotesque';
 }
 
 .phone-cta-btn {
@@ -320,7 +338,7 @@ input:focus {
   border: none;
   transition: transform 0.1s;
   margin-top: 8px;
-  font-family: 'Mulish', sans-serif;
+  font-family: 'AronGrotesque';
 }
 
 .phone-cta-btn:active {
@@ -338,7 +356,7 @@ input:focus {
   box-shadow: 0 10px 25px -5px rgba(80, 72, 229, 0.4);
   border: none;
   cursor: pointer;
-  font-family: 'Mulish', sans-serif;
+  font-family: 'AronGrotesque';
 }
 
 .phone-called-wrap {
@@ -363,7 +381,7 @@ input:focus {
    STATS SECTION
 ───────────────────────────────────────────── */
 .stats-section {
-  background: #fff;
+  background: #EDEFFE;
 }
 
 .stats-heading {
@@ -378,8 +396,8 @@ input:focus {
   box-shadow: 0 4px 16px #93d16986;
   font-size: 15px;
   padding: 4px 14px;
-  top: -6px;
-  left: calc(100% + 38px);
+  top: 35px;
+  left: calc(80%);
   white-space: nowrap;
   transform: rotate(-25deg);
   border-radius: 9999px;
@@ -406,7 +424,7 @@ input:focus {
 .stats-subtitle {
   color: #6B7280;
   font-size: 20px;
-  max-width: 450px;
+  max-width: 1000px;
   margin-top: 1rem;
   line-height: 1.6;
 }

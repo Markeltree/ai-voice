@@ -43,7 +43,7 @@ export default function FAQ() {
   const [openIndex, setOpenIndex] = useState(0);
 
   return (
-    <section className="bg-[#f8f9ff]">
+    <section className="bg-[#EDEFFE]">
       <div className="section-wrap">
         <div className="text-center mb-12">
           <h2 className="faq-heading mb-6">
@@ -68,7 +68,7 @@ export default function FAQ() {
                 className="w-full flex items-center justify-between px-5 py-5 sm:px-8 sm:py-7 md:px-10 md:py-8 text-left hover:bg-slate-50/50 transition-colors"
               >
                 <span
-                  className={`text-xl font-semibold ${openIndex === index ? "text-slate-900" : "text-slate-700"}`}
+                  className="text-xl font-semibold text-black"
                 >
                   {item.question}
                 </span>
@@ -78,7 +78,7 @@ export default function FAQ() {
                       <X size={16} strokeWidth={3} />
                     </div>
                   ) : (
-                    <div className="bg-slate-200 rounded-full p-1.5 text-slate-500">
+                    <div className="bg-slate-200 rounded-full p-1.5 text-black">
                       <Plus size={16} strokeWidth={3} />
                     </div>
                   )}
@@ -87,7 +87,7 @@ export default function FAQ() {
               <div
                 className={`transition-all duration-300 ease-in-out overflow-hidden ${openIndex === index ? "max-h-96 opacity-100" : "max-h-0 opacity-0"}`}
               >
-                <div className="px-5 pb-5 pt-0 sm:px-8 sm:pb-7 md:px-10 md:pb-8 text-slate-500 text-[14px] sm:text-base md:text-lg leading-relaxed border-t border-slate-50">
+                <div className="px-5 pb-5 pt-0 sm:px-8 sm:pb-7 md:px-10 md:pb-8 text-black text-[14px] sm:text-base md:text-lg leading-relaxed border-t border-slate-50">
                   {item.answer}
                 </div>
               </div>

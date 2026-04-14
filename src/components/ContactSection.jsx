@@ -113,7 +113,7 @@ const ContactSection = () => {
   };
 
   return (
-    <section className="bg-[#F4F7FF]">
+    <section className="bg-[#EDEFFE]">
       {/* Hidden audio element */}
       <audio ref={audioRef} src={thankVoice} preload="auto" />
       

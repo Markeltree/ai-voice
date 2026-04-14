@@ -176,7 +176,7 @@ export default function HeroSection() {
             rel="noopener noreferrer"
             className="btn-outline inline-flex items-center gap-2"
           >
-            <MicIcon size={15} /> Contact Sales
+            <MicIcon size={20} /> Contact Sales
           </a>
         </div>
         <div className="hero-phone-area" id="call">

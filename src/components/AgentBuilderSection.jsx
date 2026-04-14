@@ -3,10 +3,10 @@ import agents1 from "../assets/images/girl-1.png";
 import agents2 from "../assets/images/girl-2.png";
 import agents3 from "../assets/images/Daniel.png";
 import agents4 from "../assets/images/Andrew.png";
-import men1 from "../assets/audio/men1.mp3";
-import men2 from "../assets/audio/men2.mp3";
-import women1 from "../assets/audio/women1.mp3";
-import women2 from "../assets/audio/women2.mp3";
+import men1 from "../assets/audio/Daniel.mp3";
+import men2 from "../assets/audio/Andrew.mp3";
+import women1 from "../assets/audio/Elizabeth.mp3";
+import women2 from "../assets/audio/Sophia.mp3";
 import CtaSection from "./CtaSection";
 
 const agents = [
@@ -76,8 +76,8 @@ export default function VoiceAgentsSection() {
     <section className="bg-white">
       <div className="section-wrap max-w-[1400px] mx-auto px-6">
         <div className="relative mb-14 text-center">
-          <div className="absolute left-[10%] top-0 -rotate-12 hidden md:block">
-            <span className="bg-[#93D169] text-[13px] px-5 py-2 rounded-full shadow-sm font-bold">
+          <div className="absolute left-[8%] top-0 -rotate-12 hidden md:block">
+            <span className="bg-[#93D169] text-[18px] px-5 py-2 rounded-full shadow-sm font-bold">
               in 40+ languages
             </span>
           </div>
@@ -85,7 +85,7 @@ export default function VoiceAgentsSection() {
             Elevate Customer Experience With AI Voice Agent Development
           </h2>
           
-          <p className="text-gray-500 max-w-2xl mx-auto mt-6">
+          <p className="text-gray-500 max-w-6xl mx-auto mt-6">
             Handle high call volumes effortlessly while delivering personalized,
             real-time responses around the clock.
           </p>

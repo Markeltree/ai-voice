@@ -145,7 +145,7 @@ export default function IntegrationsSection() {
   const [activeRow2, setActiveRow2] = useState("n8n");
 
   return (
-    <section className="bg-[#F9FAFB] py-16 md:py-20 overflow-hidden">
+    <section className="bg-[#EDEFFE] py-16 md:py-20 overflow-hidden">
       <div className="max-w-[1400px] mx-auto px-4">
         <div className="text-center mb-12 md:mb-16">
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[60px] !leading-[1] font-semibold text-[#1A1A2E] mb-4">

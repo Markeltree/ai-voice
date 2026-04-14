@@ -37,8 +37,8 @@ export default function StatsSection() {
       <div className="section-wrap">
 
         <div className="flex flex-col lg:flex-row items-start justify-between gap-10 mb-12">
-          <div className="max-w-xl">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[60px] !leading-[1] font-semibold text-[#1A1A2E] mb-4">
+          <div className="max-w-5xl">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[60px] !leading-[1] font-extrabold text-[#1A1A2E] mb-4">
                Replace Call Centers with Smart AI Voice {' '}
               <span className="relative inline-block">
                 Agents
