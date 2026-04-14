@@ -23,9 +23,9 @@ const CtaSection = () => {
 
   return (
     <section className="w-full bg-white">
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Main Bento Container with #93D169 Theme */}
-        <div className="relative overflow-hidden bg-[#2D2B3D] rounded-[50px] p-12 flex flex-col items-center text-center shadow-[0_40px_120px_-20px_rgba(147,209,105,0.2)]">
+        <div className="relative overflow-hidden bg-[#2D2B3D] rounded-[28px] sm:rounded-[40px] md:rounded-[50px] p-6 sm:p-10 md:p-12 flex flex-col items-center text-center shadow-[0_40px_120px_-20px_rgba(147,209,105,0.2)]">
           
           {/* --- VOICE AGENT FLOATING ELEMENTS --- */}
           <div className="absolute inset-0 pointer-events-none">
@@ -63,22 +63,22 @@ const CtaSection = () => {
           {/* --- MAIN CONTENT --- */}
           <div className="relative z-10 max-w-4xl">
             {/* Label */}
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#93D169]/10 border border-[#93D169]/20 mb-10">
+            <div className="inline-flex items-center gap-2 px-3 py-1 sm:px-4 sm:py-1.5 rounded-full bg-[#93D169]/10 border border-[#93D169]/20 mb-6 sm:mb-10">
                <div className="w-2 h-2 bg-[#93D169] rounded-full animate-ping" />
-               <span className="text-[#93D169] text-[10px] font-black uppercase tracking-[0.2em]">Plug It In. Never Miss a Call Again</span>
+               <span className="text-[#93D169] text-[9px] sm:text-[10px] font-black uppercase tracking-[0.15em] sm:tracking-[0.2em]">Plug It In. Never Miss a Call Again</span>
             </div>
 
-            <h2 className="text-white text-5xl md:text-7xl font-black leading-[0.1] mb-8 tracking-tighter">
-              Your Phones Are Always Answered. <br />
+            <h2 className="text-white text-[28px] sm:text-5xl md:text-7xl font-black leading-[1.1] mb-5 sm:mb-8 tracking-tighter">
+              Your Phones Are Always Answered. <br className="hidden sm:block" />
               <span className="text-[#93D169]">Even at 3AM.</span>
             </h2>
 
-            <p className="text-white/60 text-lg md:text-2xl font-medium leading-relaxed mb-14 max-w-2xl mx-auto">
+            <p className="text-white/60 text-base sm:text-lg md:text-2xl font-medium leading-relaxed mb-8 sm:mb-14 max-w-2xl mx-auto">
               Meet your new AI receptionist, sounds human, works 24/7, speaks 40+ languages, and never puts a customer on hold.
             </p>
 
             {/* CTA Button - High Contrast */}
-            <button onClick={() => window.location.href = '/#call'}  className="group relative flex items-center gap-4 bg-[#93D169] text-[#0F0B1E] px-14 py-6 rounded-3xl font-black text-xl transition-all hover:scale-105 hover:shadow-[0_20px_60px_rgba(147,209,105,0.4)] mx-auto active:scale-95">
+            <button onClick={() => window.location.href = '/#call'} className="group relative flex items-center gap-3 sm:gap-4 bg-[#93D169] text-[#0F0B1E] px-8 py-4 sm:px-14 sm:py-6 rounded-2xl sm:rounded-3xl font-black text-base sm:text-xl transition-all hover:scale-105 hover:shadow-[0_20px_60px_rgba(147,209,105,0.4)] mx-auto active:scale-95">
                <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M12 14c1.66 0 3-1.34 3-3V5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3z" />
                   <path d="M17 11c0 2.76-2.24 5-5 5s-5-2.24-5-5H5c0 3.53 2.61 6.43 6 6.92V21h2v-3.08c3.39-.49 6-3.39 6-6.92h-2z" />
@@ -88,7 +88,7 @@ const CtaSection = () => {
           </div>
 
           {/* Bottom Live Visualizer Bars */}
-          <div className="absolute bottom-12 flex gap-1.5 h-16 items-center">
+          <div className="hidden sm:flex absolute bottom-8 md:bottom-12 gap-1.5 h-10 md:h-16 items-center">
              {[0.4, 0.7, 1.2, 0.9, 0.5, 0.8, 1.1, 0.6].map((d, i) => (
                 <div 
                   key={i} 

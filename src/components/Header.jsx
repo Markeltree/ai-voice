@@ -8,7 +8,7 @@ export default function Header() {
 
         <a
           href="#call"
-          className="text-sm font-semibold text-black bg-[#93D169] rounded-full px-12 py-4 transition-all duration-200"
+          className="text-xs sm:text-sm font-semibold text-black bg-[#93D169] rounded-full px-5 py-2.5 sm:px-8 sm:py-3 md:px-12 md:py-4 transition-all duration-200 whitespace-nowrap"
         >
           Let's Call
         </a>
