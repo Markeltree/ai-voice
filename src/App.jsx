@@ -9,6 +9,7 @@ import ContactSection from './components/ContactSection'
 import CallAutomation from './components/CallAutomation'
 import FAQ from './components/FAQ'
 import CtaSection2 from './components/CtaSection2'
+import VoiceWidget from './components/VoiceWidget'
 
 export default function App() {
   return (
@@ -24,6 +25,7 @@ export default function App() {
       <CallAutomation />
       <FAQ />
       <Footer />
+      <VoiceWidget />
     </div>
   )
 }
